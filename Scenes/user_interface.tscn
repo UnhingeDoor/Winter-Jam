@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://s4oqqr201p7v"]
+[gd_scene load_steps=4 format=3 uid="uid://s4oqqr201p7v"]
 
 [ext_resource type="Script" path="res://Scripts/timer_label.gd" id="1_lbuy8"]
+[ext_resource type="Script" path="res://Scripts/Score.gd" id="2_fjvwm"]
 
 [sub_resource type="Theme" id="Theme_jnhec"]
 default_font_size = 24
@@ -27,3 +28,18 @@ text = "Time remaining
 60s"
 horizontal_alignment = 1
 script = ExtResource("1_lbuy8")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 393.0
+offset_top = 1.0
+offset_right = 575.0
+offset_bottom = 72.0
+grow_horizontal = 2
+text = "Score
+0"
+horizontal_alignment = 1
+script = ExtResource("2_fjvwm")
