@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp765iise2bqc"]
+
+[ext_resource type="Script" path="res://Scenes/control_panel.gd" id="1_3egv3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ccoe2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8jguv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4q3rx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hmsu6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3p4xq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfv8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s4qg0"]
+
+[node name="ControlPanel" type="Node3D"]
+script = ExtResource("1_3egv3")
+
+[node name="ControlPanelMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_ccoe2")
+
+[node name="AcceptButton" type="StaticBody3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.3, 0.3, 0)
+
+[node name="AcceptButtonMesh" type="MeshInstance3D" parent="AcceptButton"]
+mesh = SubResource("BoxMesh_8jguv")
+
+[node name="AcceptButtonCollider" type="CollisionShape3D" parent="AcceptButton"]
+shape = SubResource("BoxShape3D_4q3rx")
+
+[node name="RejectButton" type="StaticBody3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.3, 0)
+
+[node name="RejectButtonMesh" type="MeshInstance3D" parent="RejectButton"]
+mesh = SubResource("BoxMesh_hmsu6")
+
+[node name="RejectButtonCollider" type="CollisionShape3D" parent="RejectButton"]
+shape = SubResource("BoxShape3D_3p4xq")
+
+[node name="RecycleButton" type="StaticBody3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3, 0.3, 0)
+
+[node name="RecycleButtonMesh" type="MeshInstance3D" parent="RecycleButton"]
+mesh = SubResource("BoxMesh_rfv8h")
+
+[node name="RecycleButtonCollider" type="CollisionShape3D" parent="RecycleButton"]
+shape = SubResource("BoxShape3D_s4qg0")
+
+[connection signal="input_event" from="AcceptButton" to="." method="_on_accept_button_input_event"]
+[connection signal="input_event" from="RejectButton" to="." method="_on_reject_button_input_event"]
+[connection signal="input_event" from="RecycleButton" to="." method="_on_recycle_button_input_event"]
