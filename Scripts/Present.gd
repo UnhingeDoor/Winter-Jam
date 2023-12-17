@@ -4,6 +4,7 @@ signal inspection_entered
 signal inspection_exited
 
 @export var move_speed: float = 0.1
+@export var isNice: bool = true
 
 var is_getting_inspected: bool = false
 var is_inspected: bool = false
@@ -34,6 +35,11 @@ func _physics_process(_delta):
 
 func initialise(spawn_pos: Vector3):
 	position = spawn_pos
+	isNice = true if randi_range(0, 1) == 0 else false
+	if isNice:
+		$MeshInstance3D.mesh.material.albedo_color = Color(0,1,0, 1)
+	else:
+		$MeshInstance3D.mesh.material.albedo_color = Color(1,0,0, 1)
 	pass
 
 
