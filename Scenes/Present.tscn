@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuxdvqwiaaatv"]
 
-[ext_resource type="Script" path="res://Scripts/Present.gd" id="1_iksev"]
+[ext_resource type="Script" path="res://Scripts/present.gd" id="1_n1b45"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jf71g"]
 
 [node name="Present" type="Node3D"]
-script = ExtResource("1_iksev")
+script = ExtResource("1_n1b45")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_jf71g")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://s4oqqr201p7v"]
 
-[ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="1_isr8a"]
+[ext_resource type="Script" path="res://Scripts/timer_label.gd" id="1_lbuy8"]
 
 [sub_resource type="Theme" id="Theme_jnhec"]
 default_font_size = 24
@@ -26,4 +26,4 @@ grow_horizontal = 2
 text = "Time remaining
 60s"
 horizontal_alignment = 1
-script = ExtResource("1_isr8a")
+script = ExtResource("1_lbuy8")

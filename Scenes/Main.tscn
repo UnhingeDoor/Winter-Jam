@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlh5cycdoad8o"]
+[gd_scene load_steps=6 format=3 uid="uid://rrl6e6temvop"]
 
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="1_i0wqk"]
-[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="2_enisl"]
-[ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/UserInterface.tscn" id="4_eqy1v"]
+[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
+[ext_resource type="Script" path="res://Scripts/player_camera.gd" id="3_y4i8p"]
+[ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -15,6 +16,9 @@ signal present_despawned
 
 var present_spawn_pos: Vector3
 
+
+func _ready():
+	reset_global_variables()
 
 func _process(_delta):
 	# Restart Scene
@@ -35,24 +39,30 @@ func instantiate_object(present):
 	add_child(present, true)
 
 
+func reset_global_variables():
+	GlobalVariables.inspection_in_progress = false
+	GlobalVariables.present_on_screen_count = 1
+
+
 func _on_level_timer_timeout():
 	get_tree().reload_current_scene()
 "
 
 [node name="Main" type="Node"]
 script = SubResource("GDScript_ud5np")
-present_scene = ExtResource("2_enisl")
+present_scene = ExtResource("1_mb113")
 default_present_spawn_pos = Vector3(-10, 0, 0)
 
-[node name="Player" parent="." instance=ExtResource("1_i0wqk")]
+[node name="Player" parent="." instance=ExtResource("2_uywyi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.46527)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="PlayerCamera" type="Camera3D" parent="Player"]
+script = ExtResource("3_y4i8p")
 
-[node name="Present" parent="." instance=ExtResource("2_enisl")]
+[node name="Present" parent="." instance=ExtResource("1_mb113")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
-[node name="UserInterface" parent="." instance=ExtResource("4_eqy1v")]
+[node name="UserInterface" parent="." instance=ExtResource("4_nljwa")]
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 60.0
