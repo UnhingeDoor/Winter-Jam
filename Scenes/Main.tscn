@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="3_y4i8p"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
-[ext_resource type="PackedScene" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
+[ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 [ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="6_qd2yy"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
