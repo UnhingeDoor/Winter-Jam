@@ -9,3 +9,7 @@ script = ExtResource("1_iksev")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_jf71g")
+
+[connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]
+[connection signal="inspection_exited" from="." to="." method="_on_inspection_exited"]
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

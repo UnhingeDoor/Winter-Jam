@@ -6,5 +6,3 @@
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_mqics")
-
-[node name="Camera3D" type="Camera3D" parent="."]

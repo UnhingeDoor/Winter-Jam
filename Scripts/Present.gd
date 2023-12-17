@@ -1,21 +1,49 @@
 extends Node3D
 
+signal inspection_entered
+signal inspection_exited
+
 @export var move_speed: float = 0.1
-@export var is_getting_inspected: bool = false
 
-var inspected: bool = false
+var is_getting_inspected: bool = false
+var is_inspected: bool = false
 
-# Need to create player node
 @onready var player: Node3D = get_node("../Player")
+	
 
 func _process(_delta):
-	# Temp, will replace with button event
-	if Input.is_key_pressed(KEY_SPACE):
-		inspected = true
+	#TODO Replace with button event
+	if is_getting_inspected and Input.is_key_pressed(KEY_SPACE):
+		inspection_exited.emit()
+		is_getting_inspected = false
+		is_inspected = true
+		
+	# Despawn the present when it's out of frame
+	if position.x > player.position.x + 10:
+		queue_free()
+
 
 func _physics_process(_delta):
 	# Stop the present if it's in front of the player, otherwise move
-	if position.x > player.position.x and not inspected:
-		pass
-	else:
+	if position.x > player.position.x and not is_inspected:
+		if not is_getting_inspected:
+			is_getting_inspected = true
+			inspection_entered.emit()
+		#TODO emit signal to pause other presents
+	elif not GlobalVariables.inspection_in_progress:
 		position.x += move_speed
+	else: 
+		pass
+
+func initialise(spawn_pos: Vector3):
+	position = spawn_pos
+	pass
+
+
+func _on_inspection_entered():
+	GlobalVariables.inspection_in_progress = true
+
+
+func _on_inspection_exited():
+	GlobalVariables.inspection_in_progress = false
+	GlobalVariables.present_on_screen_count -= 1
