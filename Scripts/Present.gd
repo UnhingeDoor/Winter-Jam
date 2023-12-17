@@ -9,7 +9,6 @@ var is_getting_inspected: bool = false
 var is_inspected: bool = false
 
 @onready var player: Node3D = get_node("../Player")
-	
 
 func _process(_delta):
 	#TODO Replace with button event
@@ -17,7 +16,7 @@ func _process(_delta):
 		inspection_exited.emit()
 		is_getting_inspected = false
 		is_inspected = true
-		
+	
 	# Despawn the present when it's out of frame
 	if position.x > player.position.x + 10:
 		queue_free()
@@ -29,11 +28,9 @@ func _physics_process(_delta):
 		if not is_getting_inspected:
 			is_getting_inspected = true
 			inspection_entered.emit()
-		#TODO emit signal to pause other presents
 	elif not GlobalVariables.inspection_in_progress:
 		position.x += move_speed
-	else: 
-		pass
+
 
 func initialise(spawn_pos: Vector3):
 	position = spawn_pos

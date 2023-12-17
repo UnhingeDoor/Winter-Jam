@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlh5cycdoad8o"]
+[gd_scene load_steps=5 format=3 uid="uid://dlh5cycdoad8o"]
 
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="1_i0wqk"]
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="2_enisl"]
+[ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/UserInterface.tscn" id="4_eqy1v"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
 
 signal present_despawned
 
-
-@export var max_present_on_screen_count = 2
-
+@export var max_present_on_screen_count: int = 2
 @export var present_scene: PackedScene
 @export var default_present_spawn_pos: Vector3
 
-@export var present_spawn_pos: Vector3
+var present_spawn_pos: Vector3
+
 
 func _process(_delta):
 	# Restart Scene
@@ -33,7 +33,10 @@ func _process(_delta):
 
 func instantiate_object(present):
 	add_child(present, true)
-	pass
+
+
+func _on_level_timer_timeout():
+	get_tree().reload_current_scene()
 "
 
 [node name="Main" type="Node"]
@@ -49,6 +52,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.46527)
 [node name="Present" parent="." instance=ExtResource("2_enisl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
+[node name="UserInterface" parent="." instance=ExtResource("4_eqy1v")]
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="inspection_exited" from="Present" to="." method="_on_present_inspection_exited"]
 [connection signal="tree_exited" from="Present" to="." method="_on_present_tree_exited"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
