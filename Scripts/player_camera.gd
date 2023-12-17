@@ -10,7 +10,7 @@ const max_rotation_y: float = deg_to_rad(30)
 
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 
 func _input(event):
@@ -36,5 +36,5 @@ func toggle_focus():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		# Player using camera
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	is_window_focused = not is_window_focused
