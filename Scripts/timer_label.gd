@@ -5,4 +5,3 @@ extends Label
 func _process(_delta):
 	var time_left = String.num(level_timer.time_left, 0)
 	text = "Time remaining \n%ss" % time_left
-
