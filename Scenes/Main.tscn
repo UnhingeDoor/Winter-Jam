@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlh5cycdoad8o"]
+[gd_scene load_steps=6 format=3 uid="uid://dlh5cycdoad8o"]
 
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="1_i0wqk"]
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="2_enisl"]
+[ext_resource type="Script" path="res://Scenes/PlayerCamera.gd" id="3_odt0i"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/UserInterface.tscn" id="4_eqy1v"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
@@ -47,7 +48,8 @@ default_present_spawn_pos = Vector3(-10, 0, 0)
 [node name="Player" parent="." instance=ExtResource("1_i0wqk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.46527)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="PlayerCamera" type="Camera3D" parent="Player"]
+script = ExtResource("3_odt0i")
 
 [node name="Present" parent="." instance=ExtResource("2_enisl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
