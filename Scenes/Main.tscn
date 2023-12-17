@@ -20,6 +20,7 @@ var present_spawn_pos: Vector3
 func _ready():
 	reset_global_variables()
 
+
 func _process(_delta):
 	# Restart Scene
 	if Input.is_key_pressed(KEY_ENTER):

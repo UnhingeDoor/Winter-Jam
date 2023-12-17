@@ -8,8 +8,10 @@ const max_rotation_y: float = deg_to_rad(30)
 
 @export var is_window_focused: bool = true
 
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -26,6 +28,7 @@ func _process(delta):
 		rotation.y = clamp(rotation.y, min_rotation_y, max_rotation_y)
 		# Stop moving the mouse
 		mouse_delta = Vector2()
+
 
 func toggle_focus():
 	if is_window_focused:
