@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxs8fdaw2blq0"]
+
+[ext_resource type="PackedScene" uid="uid://dhftdjrmefivw" path="res://Models/Conveyor belt.glb" id="1_g74b2"]
+[ext_resource type="Material" uid="uid://bgv226vq25fkh" path="res://Shaders/Belt_Scroll.tres" id="2_14moy"]
+[ext_resource type="Script" path="res://Scripts/Sm_Belt.gd" id="3_xpwtt"]
+
+[node name="Conveyor belt" instance=ExtResource("1_g74b2")]
+
+[node name="Sm_Belt" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_14moy")
+script = ExtResource("3_xpwtt")

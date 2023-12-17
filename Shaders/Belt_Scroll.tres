@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bgv226vq25fkh"]
+
+[ext_resource type="Texture2D" uid="uid://bosgrplbuw080" path="res://Shaders/Images/Belt Texture.png" id="1_xuqfi"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_xuqfi")

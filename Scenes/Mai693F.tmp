@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="3_y4i8p"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
-[ext_resource type="PackedScene" uid="uid://bjbqwcp4juqpa" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
+[ext_resource type="PackedScene" uid="uid://bxs8fdaw2blq0" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -59,8 +59,6 @@ default_present_spawn_pos = Vector3(-10, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.46527)
 
 [node name="PlayerCamera" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.876717, 0)
-current = true
 script = ExtResource("3_y4i8p")
 
 [node name="Present" parent="." instance=ExtResource("1_mb113")]
@@ -74,7 +72,7 @@ one_shot = true
 autostart = true
 
 [node name="Conveyor belt" parent="." instance=ExtResource("5_dcnt0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119486, -0.726182, 3.04168)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="inspection_exited" from="Present" to="." method="_on_present_inspection_exited"]
