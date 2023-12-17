@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkjap4hv63ah1"
-path="res://.godot/imported/Conveyor belt.glb-02388b69627d54337f2821f211608c81.scn"
+uid="uid://cnagdoi6p82mc"
+path="res://.godot/imported/Buttons table.glb-749a10be5094bee3b1a85025b93d9e10.scn"
 
 [deps]
 
-source_file="res://Models/Conveyor belt.glb"
-dest_files=["res://.godot/imported/Conveyor belt.glb-02388b69627d54337f2821f211608c81.scn"]
+source_file="res://Models/Buttons table.glb"
+dest_files=["res://.godot/imported/Buttons table.glb-749a10be5094bee3b1a85025b93d9e10.scn"]
 
 [params]
 

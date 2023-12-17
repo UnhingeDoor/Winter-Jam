@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjbqwcp4juqpa"]
+[gd_scene load_steps=4 format=3 uid="uid://cu0vb5uk0orc6"]
 
-[ext_resource type="PackedScene" uid="uid://bvjti8avhpdqx" path="res://Models/Conveyor belt.glb" id="1_g74b2"]
+[ext_resource type="PackedScene" uid="uid://dkjap4hv63ah1" path="res://Models/Conveyor belt.glb" id="1_g74b2"]
 [ext_resource type="Material" uid="uid://bgv226vq25fkh" path="res://Shaders/Belt_Scroll.tres" id="2_14moy"]
 [ext_resource type="Script" path="res://Scripts/Sm_Belt.gd" id="3_xpwtt"]
-[ext_resource type="PackedScene" uid="uid://dkw757rkd3c5r" path="res://Models/Vent.glb" id="4_euh1t"]
 
 [node name="Conveyor belt" instance=ExtResource("1_g74b2")]
 
@@ -11,6 +10,3 @@
 material_override = ExtResource("2_14moy")
 surface_material_override/0 = ExtResource("2_14moy")
 script = ExtResource("3_xpwtt")
-
-[node name="Vent" parent="." index="2" instance=ExtResource("4_euh1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00849867, -0.0270668, -0.0197682)
