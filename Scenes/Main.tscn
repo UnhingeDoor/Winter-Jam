@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=10 format=3 uid="uid://rrl6e6temvop"]
 
-[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
+[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="3_y4i8p"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 [ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="6_qd2yy"]
-[ext_resource type="PackedScene" uid="uid://bp765iise2bqc" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
+[ext_resource type="PackedScene" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
+[ext_resource type="PackedScene" uid="uid://cnagdoi6p82mc" path="res://Models/Buttons table.glb" id="8_51u61"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -75,7 +76,7 @@ one_shot = true
 autostart = true
 
 [node name="Conveyor belt" parent="." instance=ExtResource("5_dcnt0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.32356)
 
 [node name="SM_Room2" parent="." instance=ExtResource("6_qd2yy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -84,7 +85,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
 
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.400327, 1.35347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87862, 0.400327, 1.35347)
+
+[node name="Buttons table" parent="." instance=ExtResource("8_51u61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0521483, 0, 1.83136)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="inspection_exited" from="Present" to="." method="_on_present_inspection_exited"]
