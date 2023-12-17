@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=12 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 [ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="6_qd2yy"]
+[ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="PackedScene" uid="uid://cnagdoi6p82mc" path="res://Models/Buttons table.glb" id="8_51u61"]
+[ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -89,6 +91,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87862, 0.400327, 1.35347)
 
 [node name="Buttons table" parent="." instance=ExtResource("8_51u61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0521483, 0, 1.83136)
+
+[node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
+transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.585, 0, 2.683)
+
+[node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.79508, 0, 2.68302)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="inspection_exited" from="Present" to="." method="_on_present_inspection_exited"]
