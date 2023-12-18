@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp765iise2bqc"]
+
+[ext_resource type="Script" path="res://control_panel.gd" id="1_3egv3"]
+[ext_resource type="PackedScene" uid="uid://cnagdoi6p82mc" path="res://Models/Buttons table.glb" id="2_1r4ya"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jtld8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4jock"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hmsu6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3p4xq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfv8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s4qg0"]
+
+[node name="ControlPanel" type="Node3D"]
+script = ExtResource("1_3egv3")
+
+[node name="Buttons table" parent="." instance=ExtResource("2_1r4ya")]
+
+[node name="AcceptButton" type="StaticBody3D" parent="Buttons table"]
+transform = Transform3D(0.125, 0, 0, 0, 0.0272001, -0.078665, 0, 0.0220262, 0.0971432, -0.115, 0.612953, 0.00109046)
+
+[node name="AcceptButtonMesh" type="MeshInstance3D" parent="Buttons table/AcceptButton"]
+mesh = SubResource("CylinderMesh_jtld8")
+
+[node name="AcceptButtonCollider" type="CollisionShape3D" parent="Buttons table/AcceptButton"]
+shape = SubResource("CylinderShape3D_4jock")
+
+[node name="RejectButton" type="StaticBody3D" parent="Buttons table"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.3, 0)
+
+[node name="RejectButtonMesh" type="MeshInstance3D" parent="Buttons table/RejectButton"]
+mesh = SubResource("BoxMesh_hmsu6")
+
+[node name="RejectButtonCollider" type="CollisionShape3D" parent="Buttons table/RejectButton"]
+shape = SubResource("BoxShape3D_3p4xq")
+
+[node name="RecycleButton" type="StaticBody3D" parent="Buttons table"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.3, 0.3, 0)
+
+[node name="RecycleButtonMesh" type="MeshInstance3D" parent="Buttons table/RecycleButton"]
+mesh = SubResource("BoxMesh_rfv8h")
+
+[node name="RecycleButtonCollider" type="CollisionShape3D" parent="Buttons table/RecycleButton"]
+shape = SubResource("BoxShape3D_s4qg0")
+
+[connection signal="input_event" from="Buttons table/AcceptButton" to="." method="_on_accept_button_input_event"]
+[connection signal="input_event" from="Buttons table/RejectButton" to="." method="_on_reject_button_input_event"]
+[connection signal="input_event" from="Buttons table/RecycleButton" to="." method="_on_recycle_button_input_event"]

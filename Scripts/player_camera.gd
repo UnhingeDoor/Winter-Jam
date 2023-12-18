@@ -1,16 +1,16 @@
 extends Camera3D
 
 @export var mouse_delta: Vector2
-const min_rotation_x: float = deg_to_rad(-45)
-const max_rotation_x: float = deg_to_rad(30)
-const min_rotation_y: float = deg_to_rad(-30)
-const max_rotation_y: float = deg_to_rad(30)
+const min_rotation_x: float = deg_to_rad(-60)
+const max_rotation_x: float = deg_to_rad(45)
+const min_rotation_y: float = deg_to_rad(-90)
+const max_rotation_y: float = deg_to_rad(90)
 
 @export var is_window_focused: bool = true
 
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _input(event):
@@ -36,5 +36,5 @@ func toggle_focus():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		# Player using camera
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	is_window_focused = not is_window_focused

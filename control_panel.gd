@@ -3,7 +3,7 @@ extends Node3D
 signal present_accepted
 signal present_rejected
 signal present_recycled
-
+signal xray_present
 
 func _on_accept_button_input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -21,3 +21,9 @@ func _on_recycle_button_input_event(_camera, event, _position, _normal, _shape_i
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed == true:
 			present_recycled.emit()
+
+
+func _on_xray_button_input_event(_camera, event, _position, _normal, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == 1 and event.pressed == true:
+			xray_present.emit()
