@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuxdvqwiaaatv"]
+[gd_scene load_steps=4 format=3 uid="uid://cuxdvqwiaaatv"]
 
 [ext_resource type="Script" path="res://Scripts/present.gd" id="1_n1b45"]
-[ext_resource type="PackedScene" uid="uid://wklknd4t60xd" path="res://Models/Bear.glb" id="2_sbm2q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04au4"]
 
@@ -12,10 +11,8 @@ material = SubResource("StandardMaterial3D_04au4")
 script = ExtResource("1_n1b45")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.910855, 0.499735, 0.0893314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 mesh = SubResource("BoxMesh_jf71g")
-
-[node name="Bear" parent="." instance=ExtResource("2_sbm2q")]
 
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]
 [connection signal="inspection_exited" from="." to="." method="_on_inspection_exited"]
