@@ -50,3 +50,7 @@ func _on_inspection_entered():
 func _on_inspection_exited():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count -= 1
+
+
+func _on_control_panel_present_accepted():
+	print_debug("Accepted blah blah")

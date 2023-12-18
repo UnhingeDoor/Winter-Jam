@@ -49,6 +49,7 @@ text_direction = 1
 script = ExtResource("3_kga65")
 
 [connection signal="input_event" from="SM_Button4/RejectButton" to="." method="_on_reject_button_input_event"]
+[connection signal="mouse_entered" from="SM_Button4/RejectButton" to="." method="_on_reject_button_mouse_entered"]
 [connection signal="input_event" from="SM_Button1/XrayButton" to="." method="_on_xray_button_input_event"]
 [connection signal="input_event" from="SM_Button2/RecycleButton" to="." method="_on_recycle_button_input_event"]
 [connection signal="input_event" from="SM_Button3/AcceptButton" to="." method="_on_accept_button_input_event"]

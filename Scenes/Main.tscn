@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=10 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
-[ext_resource type="Script" path="res://Scripts/player_camera.gd" id="3_y4i8p"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 [ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="6_qd2yy"]
@@ -58,14 +57,6 @@ func _on_level_timer_timeout():
 script = SubResource("GDScript_ud5np")
 present_scene = ExtResource("1_mb113")
 
-[node name="Player" parent="." instance=ExtResource("2_uywyi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.08355)
-
-[node name="PlayerCamera" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.876717, 0)
-current = true
-script = ExtResource("3_y4i8p")
-
 [node name="Present" parent="." instance=ExtResource("1_mb113")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.37, 0)
 
@@ -94,9 +85,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7950
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216876, 1.86655)
 
+[node name="Player" parent="." instance=ExtResource("2_uywyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.387)
+
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="tree_exited" from="Present" to="." method="_on_present_tree_exited"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="present_accepted" from="ControlPanel" to="Present" method="_on_control_panel_present_accepted"]
-[connection signal="present_recycled" from="ControlPanel" to="Present" method="_on_control_panel_present_recycled"]
-[connection signal="present_rejected" from="ControlPanel" to="Present" method="_on_control_panel_present_rejected"]

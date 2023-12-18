@@ -27,3 +27,7 @@ func _on_xray_button_input_event(_camera, event, _position, _normal, _shape_idx)
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed == true:
 			xray_present.emit()
+
+
+func _on_reject_button_mouse_entered():
+	print_debug("ENTERED REJECT BUTTON")

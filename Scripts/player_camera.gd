@@ -5,12 +5,12 @@ const min_rotation_x: float = deg_to_rad(-60)
 const max_rotation_x: float = deg_to_rad(45)
 const min_rotation_y: float = deg_to_rad(-90)
 const max_rotation_y: float = deg_to_rad(90)
+const RAY_LENGTH = 1000
 
 @export var is_window_focused: bool = true
 
-
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 
 func _input(event):
@@ -18,7 +18,11 @@ func _input(event):
 		mouse_delta = event.relative
 	if event.is_action_pressed("ui_cancel"):
 		toggle_focus()
-
+		
+	#if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		#var from = player_camera.project_ray_origin(event.position)
+		#var to = from + player_camera.project_ray_normal(event.position) * RAY_LENGTH
+		#print_debug(to)
 
 func _process(delta):
 	if is_window_focused:
@@ -36,5 +40,5 @@ func toggle_focus():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		# Player using camera
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	is_window_focused = not is_window_focused
