@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosgrplbuw080"
-path="res://.godot/imported/Belt Texture.png-a5568dad142aa11e3d95862e5162866c.ctex"
+uid="uid://cyulg2tbyq7yy"
+path.s3tc="res://.godot/imported/Tex_Voronoi_01.png-a38017e4b8ac0f4a47c912981c156de8.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Shaders/Images/Belt Texture.png"
-dest_files=["res://.godot/imported/Belt Texture.png-a5568dad142aa11e3d95862e5162866c.ctex"]
+source_file="res://Shaders/Images/Tex_Voronoi_01.png"
+dest_files=["res://.godot/imported/Tex_Voronoi_01.png-a38017e4b8ac0f4a47c912981c156de8.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

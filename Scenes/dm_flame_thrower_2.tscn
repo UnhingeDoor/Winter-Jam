@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c62085wchhm0v"]
+
+[ext_resource type="PackedScene" uid="uid://do5lhd4p527pn" path="res://Models/DM_FlameThrower.glb" id="1_irj02"]
+[ext_resource type="Texture2D" uid="uid://bf318gtavl8ju" path="res://Shaders/Images/TEX_Flamethrower.png" id="2_18ddy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3oyk"]
+albedo_texture = ExtResource("2_18ddy")
+metallic = 1.0
+
+[node name="DM_FlameThrower2" instance=ExtResource("1_irj02")]
+
+[node name="DM_FlameThrower" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_f3oyk")

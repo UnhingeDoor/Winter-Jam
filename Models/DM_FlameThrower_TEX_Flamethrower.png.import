@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosgrplbuw080"
-path="res://.godot/imported/Belt Texture.png-a5568dad142aa11e3d95862e5162866c.ctex"
+uid="uid://b2xgx4phud5or"
+path="res://.godot/imported/DM_FlameThrower_TEX_Flamethrower.png-7ef3c4bf115783958e4965446afc3626.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shaders/Images/Belt Texture.png"
-dest_files=["res://.godot/imported/Belt Texture.png-a5568dad142aa11e3d95862e5162866c.ctex"]
+source_file="res://Models/DM_FlameThrower_TEX_Flamethrower.png"
+dest_files=["res://.godot/imported/DM_FlameThrower_TEX_Flamethrower.png-7ef3c4bf115783958e4965446afc3626.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
