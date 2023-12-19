@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wklknd4t60xd"
-path="res://.godot/imported/Bear.glb-725c57ece2d95a9368e7d9c4eac284db.scn"
+uid="uid://dk8sighwlkiwo"
+path="res://.godot/imported/SM_Bear_Broken.glb-2cf903ad3129ada07a2d5e99cce58263.scn"
 
 [deps]
 
-source_file="res://Models/Bear.glb"
-dest_files=["res://.godot/imported/Bear.glb-725c57ece2d95a9368e7d9c4eac284db.scn"]
+source_file="res://Models/SM_Bear_Broken.glb"
+dest_files=["res://.godot/imported/SM_Bear_Broken.glb-2cf903ad3129ada07a2d5e99cce58263.scn"]
 
 [params]
 
