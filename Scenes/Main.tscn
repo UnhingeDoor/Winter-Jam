@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=12 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="6_qd2yy"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://dw4l8prdnx7yr" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
+[ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
+[ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
@@ -24,24 +26,21 @@ signal present_despawned
 
 func _ready():
 	reset_global_variables()
-	await get_tree().create_timer(2.0).timeout
-	GlobalVariables.is_ready = true
 
 
 func _process(_delta):
-	if GlobalVariables.is_ready:
-		# Restart Scene
-		if Input.is_key_pressed(KEY_ENTER):
-			get_tree().reload_current_scene()
-		
-		# Control present spawning
-		if GlobalVariables.present_on_screen_count < max_present_on_screen_count:
-			var present = present_scene.instantiate()
-			# Offset the presents' spawning position
-			present_spawn_pos.x = default_present_spawn_pos.x - (10 * GlobalVariables.present_on_screen_count)
-			present.initialise(present_spawn_pos, player)
-			instantiate_object(present)
-			GlobalVariables.present_on_screen_count += 1
+	# Restart Scene
+	if Input.is_key_pressed(KEY_ENTER):
+		get_tree().reload_current_scene()
+	
+	# Control present spawning
+	if GlobalVariables.present_on_screen_count < max_present_on_screen_count:
+		var present = present_scene.instantiate()
+		# Offset the presents' spawning position
+		present_spawn_pos.x = default_present_spawn_pos.x - (10 * GlobalVariables.present_on_screen_count)
+		present.initialise(present_spawn_pos, player)
+		instantiate_object(present)
+		GlobalVariables.present_on_screen_count += 1
 
 
 func instantiate_object(present):
@@ -51,7 +50,6 @@ func instantiate_object(present):
 func reset_global_variables():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count = 1
-	GlobalVariables.is_ready = false
 
 
 func _on_level_timer_timeout():
@@ -92,6 +90,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7950
 
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0214051, 1.86655)
+
+[node name="DM_FlameThrower2" parent="." instance=ExtResource("9_cc0at")]
+transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, 3.62104, 0.242134)
+
+[node name="Fire" parent="DM_FlameThrower2" instance=ExtResource("10_f6eys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19297e-07, -0.169316, 0)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="present_accepted" from="Player" to="Present" method="_on_player_present_accepted"]

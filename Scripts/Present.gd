@@ -14,13 +14,7 @@ var is_inspected: bool = false
 func _ready():
 	pass
 
-func _process(_delta):
-	#TODO Replace with button event
-	if is_getting_inspected and Input.is_key_pressed(KEY_SPACE):
-		inspection_exited.emit()
-		is_getting_inspected = false
-		is_inspected = true
-	
+func _process(_delta):	
 	# Despawn the present when it's out of frame
 	if position.x > player.position.x + 10:
 		queue_free()

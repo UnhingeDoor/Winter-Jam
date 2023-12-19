@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://1x65lccosvku"]
 
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="1_2epd8"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_055h5"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ny4s5"]
 [ext_resource type="Script" path="res://Scripts/raycast.gd" id="3_4hwc1"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mqics"]
 
 [node name="Player" type="Node3D"]
-script = ExtResource("1_055h5")
+script = ExtResource("1_ny4s5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_mqics")

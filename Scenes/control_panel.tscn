@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw4l8prdnx7yr"]
+[gd_scene load_steps=7 format=3 uid="uid://dw4l8prdnx7yr"]
 
 [ext_resource type="PackedScene" uid="uid://cnagdoi6p82mc" path="res://Models/Buttons table.glb" id="1_ubkla"]
-[ext_resource type="Script" path="res://control_panel.gd" id="2_as14k"]
 [ext_resource type="Script" path="res://Scripts/timer_label.gd" id="3_kga65"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_edjnd"]
@@ -13,7 +12,6 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_chrlt"]
 
 [node name="ControlPanel" instance=ExtResource("1_ubkla")]
-script = ExtResource("2_as14k")
 
 [node name="RejectButton" type="StaticBody3D" parent="SM_Button4" index="0"]
 
