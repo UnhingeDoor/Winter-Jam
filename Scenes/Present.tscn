@@ -11,7 +11,6 @@ material = SubResource("StandardMaterial3D_04au4")
 script = ExtResource("1_n1b45")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 mesh = SubResource("BoxMesh_jf71g")
 
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]

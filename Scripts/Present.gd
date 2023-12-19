@@ -10,6 +10,7 @@ var is_getting_inspected: bool = false
 var is_inspected: bool = false
 
 @onready var player: Node3D = get_node("../Player")
+#@onready var control_panel: Node3D = get_node("../ControlPanel")
 
 func _process(_delta):
 	#TODO Replace with button event
@@ -34,7 +35,14 @@ func _physics_process(_delta):
 
 
 func initialise(spawn_pos: Vector3):
+	# Establish connectors to signals from player
+	
+	var control_panel: Node3D = get_node("../ControlPanel")
+	print_debug(control_panel)
+	#control_panel.present_accepted().connect(_on_player_present_accepted)
 	position = spawn_pos
+	
+	# Get Nice/naughty
 	isNice = true if randi_range(0, 1) == 0 else false
 	if isNice:
 		$MeshInstance3D.mesh.material.albedo_color = Color(0, 1, 0, 1)
@@ -52,5 +60,13 @@ func _on_inspection_exited():
 	GlobalVariables.present_on_screen_count -= 1
 
 
-func _on_control_panel_present_accepted():
-	print_debug("Accepted blah blah")
+func _on_player_present_accepted():
+	print_debug("Accepted")
+
+
+func _on_player_present_rejected():
+	print_debug("Rejected")
+
+
+func _on_player_present_recycled():
+	print_debug("Recycled")
