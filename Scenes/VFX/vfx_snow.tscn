@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://clhcl6527p4j1"]
+
+[ext_resource type="Shader" uid="uid://pon2xwqt5uwp" path="res://Shaders/VFX_Snow.tres" id="1_ia7j5"]
+[ext_resource type="Texture2D" uid="uid://claxle40048jp" path="res://Shaders/Images/Tex_SnowFlake.png" id="2_hyh8r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqtjj"]
+render_priority = 0
+shader = ExtResource("1_ia7j5")
+shader_parameter/MainTex = ExtResource("2_hyh8r")
+
+[sub_resource type="Gradient" id="Gradient_anef0"]
+offsets = PackedFloat32Array(0, 0.532609, 0.929348, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.647059, 1, 1, 1, 0.647059, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wwjtp"]
+gradient = SubResource("Gradient_anef0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oif1g"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 10)
+angle_min = -360.0
+angle_max = 360.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+orbit_velocity_min = -0.01
+orbit_velocity_max = 0.01
+gravity = Vector3(0, -0.05, 0)
+radial_accel_min = -0.02
+radial_accel_max = 0.02
+scale_min = 0.1
+scale_max = 0.25
+color_ramp = SubResource("GradientTexture1D_wwjtp")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_urdmu"]
+
+[node name="VFX_Snow" type="Node3D"]
+
+[node name="SnowFall" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_dqtjj")
+amount = 200
+lifetime = 20.0
+process_material = SubResource("ParticleProcessMaterial_oif1g")
+draw_pass_1 = SubResource("QuadMesh_urdmu")
