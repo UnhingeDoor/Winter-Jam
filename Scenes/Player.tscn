@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://1x65lccosvku"]
 
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="1_2epd8"]
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_055h5"]
-[ext_resource type="Script" path="res://Scenes/raycast.gd" id="2_wiujm"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_055h5"]
+[ext_resource type="Script" path="res://Scripts/raycast.gd" id="3_4hwc1"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mqics"]
 
@@ -22,6 +22,6 @@ script = ExtResource("1_2epd8")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(1, 1, 0, 1)
-script = ExtResource("2_wiujm")
+script = ExtResource("3_4hwc1")
 
 [connection signal="button_pressed" from="CameraPivot/PlayerCamera/RayCast3D" to="." method="_on_ray_cast_3d_button_pressed"]

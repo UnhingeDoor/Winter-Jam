@@ -19,25 +19,29 @@ signal present_despawned
 @export var default_present_spawn_pos = Vector3(-10, 1.37, 0)
 
 @onready var present_spawn_pos = default_present_spawn_pos
+@onready var player = get_node(\"Player\")
 
 
 func _ready():
 	reset_global_variables()
+	await get_tree().create_timer(2.0).timeout
+	GlobalVariables.is_ready = true
 
 
 func _process(_delta):
-	# Restart Scene
-	if Input.is_key_pressed(KEY_ENTER):
-		get_tree().reload_current_scene()
-	
-	# Control present spawning
-	if GlobalVariables.present_on_screen_count < max_present_on_screen_count:
-		var present = present_scene.instantiate()
-		# Offset the presents' spawning position
-		present_spawn_pos.x = default_present_spawn_pos.x - (10 * GlobalVariables.present_on_screen_count)
-		present.initialise(present_spawn_pos)
-		instantiate_object(present)
-		GlobalVariables.present_on_screen_count += 1
+	if GlobalVariables.is_ready:
+		# Restart Scene
+		if Input.is_key_pressed(KEY_ENTER):
+			get_tree().reload_current_scene()
+		
+		# Control present spawning
+		if GlobalVariables.present_on_screen_count < max_present_on_screen_count:
+			var present = present_scene.instantiate()
+			# Offset the presents' spawning position
+			present_spawn_pos.x = default_present_spawn_pos.x - (10 * GlobalVariables.present_on_screen_count)
+			present.initialise(present_spawn_pos, player)
+			instantiate_object(present)
+			GlobalVariables.present_on_screen_count += 1
 
 
 func instantiate_object(present):
@@ -47,6 +51,7 @@ func instantiate_object(present):
 func reset_global_variables():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count = 1
+	GlobalVariables.is_ready = false
 
 
 func _on_level_timer_timeout():
@@ -94,4 +99,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0214051, 1.86655)
 [connection signal="present_rejected" from="Player" to="Present" method="_on_player_present_rejected"]
 [connection signal="tree_exited" from="Present" to="." method="_on_present_tree_exited"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
-[connection signal="present_accepted" from="ControlPanel" to="Present" method="_on_control_panel_present_accepted"]

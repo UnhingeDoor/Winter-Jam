@@ -10,7 +10,9 @@ var is_getting_inspected: bool = false
 var is_inspected: bool = false
 
 @onready var player: Node3D = get_node("../Player")
-#@onready var control_panel: Node3D = get_node("../ControlPanel")
+
+func _ready():
+	pass
 
 func _process(_delta):
 	#TODO Replace with button event
@@ -34,12 +36,11 @@ func _physics_process(_delta):
 		position.x += move_speed
 
 
-func initialise(spawn_pos: Vector3):
+func initialise(spawn_pos: Vector3 , obj):
 	# Establish connectors to signals from player
-	
-	var control_panel: Node3D = get_node("../ControlPanel")
-	print_debug(control_panel)
-	#control_panel.present_accepted().connect(_on_player_present_accepted)
+	obj.present_accepted.connect(_on_player_present_accepted)
+	obj.present_rejected.connect(_on_player_present_rejected)
+	obj.present_recycled.connect(_on_player_present_recycled)
 	position = spawn_pos
 	
 	# Get Nice/naughty
@@ -61,12 +62,22 @@ func _on_inspection_exited():
 
 
 func _on_player_present_accepted():
-	print_debug("Accepted")
+	if is_getting_inspected:
+		inspection_exited.emit()
+		is_getting_inspected = false
+		is_inspected = true
 
 
 func _on_player_present_rejected():
-	print_debug("Rejected")
+	if is_getting_inspected:
+		inspection_exited.emit()
+		is_getting_inspected = false
+		is_inspected = true
 
 
 func _on_player_present_recycled():
-	print_debug("Recycled")
+	if is_getting_inspected:
+		inspection_exited.emit()
+		is_getting_inspected = false
+		is_inspected = true
+

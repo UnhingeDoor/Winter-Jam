@@ -40,7 +40,7 @@ transform = Transform3D(2, 0, 0, 0, 0.5, 5.96046e-08, 0, -1.49012e-08, 2, 0, 0, 
 shape = SubResource("CylinderShape3D_chrlt")
 
 [node name="TimerLabel" type="Label3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0.0328675, 0.840784, -0.328371)
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0.0328675, 1.40327, -0.328371)
 alpha_antialiasing_mode = 2
 alpha_antialiasing_edge = 1.0
 texture_filter = 1
