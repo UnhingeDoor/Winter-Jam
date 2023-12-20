@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3onujqdikibt"
-path="res://.godot/imported/Vent.glb-109e446112dee773619fafeb5ec4b721.scn"
+uid="uid://1bcmfwdx82x5"
+path="res://.godot/imported/SM_Vent.glb-14006826867a4da457152a16c31756da.scn"
 
 [deps]
 
-source_file="res://Models/Vent.glb"
-dest_files=["res://.godot/imported/Vent.glb-109e446112dee773619fafeb5ec4b721.scn"]
+source_file="res://Models/SM_Vent.glb"
+dest_files=["res://.godot/imported/SM_Vent.glb-14006826867a4da457152a16c31756da.scn"]
 
 [params]
 

@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=14 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
-[ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="6_qd2yy"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Room.glb" id="6_qd2yy"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://dw4l8prdnx7yr" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
-[ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
+[ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 [ext_resource type="PackedScene" uid="uid://clhcl6527p4j1" path="res://Scenes/VFX/vfx_snow.tscn" id="11_ieh2n"]
+[ext_resource type="PackedScene" uid="uid://1bcmfwdx82x5" path="res://Models/SM_Vent.glb" id="12_lx7iq"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -74,8 +75,8 @@ wait_time = 60.0
 one_shot = true
 autostart = true
 
-[node name="ConveyorBelt" parent="." instance=ExtResource("5_dcnt0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.32356)
+[node name="Conveyor belt" parent="." instance=ExtResource("5_dcnt0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0817055, 0, -0.439231)
 
 [node name="SM_Room2" parent="." instance=ExtResource("6_qd2yy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -100,6 +101,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19297e-07, -0.169316, 0)
 
 [node name="VFX_Snow" parent="." instance=ExtResource("11_ieh2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)
+
+[node name="SM_Vent" parent="." instance=ExtResource("12_lx7iq")]
+transform = Transform3D(-1.93, 0, -2.91422e-07, 0, 1.93, 0, 2.91422e-07, 0, -1.93, -9.6815, 0.0350773, -0.468706)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="present_accepted" from="Player" to="Present" method="_on_player_present_accepted"]
