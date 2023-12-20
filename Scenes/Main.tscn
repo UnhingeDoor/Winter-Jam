@@ -78,9 +78,6 @@ autostart = true
 [node name="Conveyor belt" parent="." instance=ExtResource("5_dcnt0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0817055, 0, -0.439231)
 
-[node name="SM_Room2" parent="." instance=ExtResource("6_qd2yy")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
 
@@ -104,6 +101,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)
 
 [node name="SM_Vent" parent="." instance=ExtResource("12_lx7iq")]
 transform = Transform3D(-1.93, 0, -2.91422e-07, 0, 1.93, 0, 2.91422e-07, 0, -1.93, -9.6815, 0.0350773, -0.468706)
+
+[node name="SM_Room" parent="." instance=ExtResource("6_qd2yy")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="present_accepted" from="Player" to="Present" method="_on_player_present_accepted"]
