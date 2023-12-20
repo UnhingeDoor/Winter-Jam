@@ -42,5 +42,7 @@ collision_bounce = 0.0
 material_override = SubResource("ShaderMaterial_dqtjj")
 amount = 200
 lifetime = 20.0
+preprocess = 30.0
+visibility_aabb = AABB(-8.41352, -9.5454, -7.55677, 16.827, 19.0908, 15.1135)
 process_material = SubResource("ParticleProcessMaterial_oif1g")
 draw_pass_1 = SubResource("QuadMesh_urdmu")
