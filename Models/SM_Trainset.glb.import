@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://nlovro11j3cj"
-path="res://.godot/imported/Conveyor belt.glb-02388b69627d54337f2821f211608c81.scn"
+uid="uid://ck68nhfd5qv4w"
+path="res://.godot/imported/SM_Trainset.glb-ceb37e519b6a336c4bc46246ec6cd20c.scn"
 
 [deps]
 
-source_file="res://Models/Conveyor belt.glb"
-dest_files=["res://.godot/imported/Conveyor belt.glb-02388b69627d54337f2821f211608c81.scn"]
+source_file="res://Models/SM_Trainset.glb"
+dest_files=["res://.godot/imported/SM_Trainset.glb-ceb37e519b6a336c4bc46246ec6cd20c.scn"]
 
 [params]
 
