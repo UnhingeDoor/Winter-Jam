@@ -1,14 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=15 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
-[ext_resource type="PackedScene" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
+[ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 [ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Sword.glb" id="6_qd2yy"]
-[ext_resource type="Script" path="res://Scripts/NaughtyNiceBook.gd" id="7_65oph"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
+[ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
 [ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
@@ -59,8 +59,6 @@ func _on_level_timer_timeout():
 	get_tree().reload_current_scene()
 "
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_l3g5a"]
-
 [node name="Main" type="Node"]
 script = SubResource("GDScript_ud5np")
 present_scene = ExtResource("1_mb113")
@@ -91,10 +89,15 @@ transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 
 [node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
 transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.585, 0, 2.683)
 
-[node name="BookPedestalCollider" type="CollisionShape3D" parent="SM_BookPedestal2"]
-transform = Transform3D(86.665, 0.407066, 0.048335, -1.16198, 47.5428, 1.86934, 0.673033, 29.6631, -2.99676, 0.00278282, 1.47382, -0.0983467)
-shape = SubResource("BoxShape3D_l3g5a")
-script = ExtResource("7_65oph")
+[node name="LeftPage" type="Label3D" parent="SM_BookPedestal2"]
+transform = Transform3D(-36.1896, -0.0680666, -0.0122063, -1.21789, 44.8569, 0.0818752, 2.20392, 23.6704, -0.155193, 0.146164, 1.5033, -0.143578)
+pixel_size = 0.0001
+text = "Jimmy"
+font_size = 10
+outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("8_5mffi")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.79508, 0, 2.68302)
@@ -112,8 +115,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19297e-07, -0.169316, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
-[connection signal="present_accepted" from="Player" to="Present" method="_on_player_present_accepted"]
-[connection signal="present_recycled" from="Player" to="Present" method="_on_player_present_recycled"]
-[connection signal="present_rejected" from="Player" to="Present" method="_on_player_present_rejected"]
 [connection signal="tree_exited" from="Present" to="." method="_on_present_tree_exited"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

@@ -5,9 +5,9 @@ var database : SQLite
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	##Creates database file
-	#database = SQLite.new()
-	#database.path="res://data.db"
-	#database.open_db()
+	database = SQLite.new()
+	database.path="res://data.db"
+	database.open_db()
 	
 	##Defines the data table
 	#var table = {
@@ -23,8 +23,13 @@ func _ready():
 	#
 	#database.create_table("presents", table)
 	
-	##Database has been created and data added
+	##Database has been created and data added	
 	
+	##Collecting first names from the database
+	var tableName = "presents"
+	database.query("select * from " + tableName + ";")
+	for i in range(0, database.query_result.size()):
+		GlobalVariables.firstNames.push_back(database.query_result[i]["firstName"])
 	
 	pass
 
