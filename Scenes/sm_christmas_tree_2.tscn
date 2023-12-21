@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkjcylk7wegye"]
+
+[ext_resource type="PackedScene" uid="uid://c1bbttpe4xjuo" path="res://Models/SM_ChristmasTree.glb" id="1_qgt3g"]
+[ext_resource type="Texture2D" uid="uid://da2bewp20c8t2" path="res://Shaders/Images/TEX_Tinsel.png" id="2_dq3lm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_srerp"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("2_dq3lm")
+metallic = 1.0
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st7tv"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("2_dq3lm")
+metallic = 1.0
+roughness = 0.25
+
+[node name="SM_ChristmasTree2" instance=ExtResource("1_qgt3g")]
+
+[node name="SM_ChristmasTree" parent="." index="0"]
+surface_material_override/11 = SubResource("StandardMaterial3D_srerp")
+surface_material_override/13 = SubResource("StandardMaterial3D_st7tv")

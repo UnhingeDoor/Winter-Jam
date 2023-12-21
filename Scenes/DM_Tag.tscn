@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kl0mwdc4pw0q"]
+
+[ext_resource type="PackedScene" uid="uid://cymhbpp2f7clr" path="res://Models/DM_Tag.glb" id="1_kkgix"]
+[ext_resource type="Material" uid="uid://cifdvt8lx2ilv" path="res://Scenes/MAT_Tag.tres" id="2_nteyv"]
+
+[node name="DM_Tag" instance=ExtResource("1_kkgix")]
+
+[node name="Plane_003" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nteyv")
