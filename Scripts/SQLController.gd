@@ -17,7 +17,7 @@ func _ready():
 		#"nameMisspelling" : {"data_type":"text"},
 		#"address" : {"data_type":"text"},
 		#"addMisspelling" : {"data_type":"text"},
-		#"naughtNice" : {"data_type":"text"},
+		#"naughtyNice" : {"data_type":"text"},
 		#"wishList" : {"data_type":"text"}
 	#} 
 	#
@@ -25,11 +25,13 @@ func _ready():
 	
 	##Database has been created and data added	
 	
-	##Collecting first names from the database
+	##Collecting data from the database
 	var tableName = "presents"
 	database.query("select * from " + tableName + ";")
 	for i in range(0, database.query_result.size()):
 		GlobalVariables.firstNames.push_back(database.query_result[i]["firstName"])
+	for i in range(0, database.query_result.size()):
+		GlobalVariables.naughtyNice.push_back(database.query_result[i]["naughtyNice"])
 	
 	pass
 

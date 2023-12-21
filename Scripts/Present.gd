@@ -37,16 +37,15 @@ func initialise(spawn_pos: Vector3 , obj):
 	obj.present_recycled.connect(_on_player_present_recycled)
 	position = spawn_pos
 	
-	# Get Nice/naughty
-	isNice = true if randi_range(0, 1) == 0 else false
-	if isNice:
+	## Get Nice/naughty
+	if GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex] == "Nice":
 		$MeshInstance3D.mesh.material.albedo_color = Color(0, 1, 0, 1)
 		GlobalVariables.NaughtNiceFixing = "Nice"
-	else:
+	if GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex] == "Naughty":
 		$MeshInstance3D.mesh.material.albedo_color = Color(1, 0, 0, 1)
 		GlobalVariables.NaughtNiceFixing = "Naughty"
-	pass
-
+	
+	GlobalVariables.presentDataIndex += 1
 
 func _on_inspection_entered():
 	GlobalVariables.inspection_in_progress = true
@@ -55,7 +54,7 @@ func _on_inspection_entered():
 func _on_inspection_exited():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count -= 1
-
+	
 
 func _on_player_present_accepted():
 	if is_getting_inspected:
