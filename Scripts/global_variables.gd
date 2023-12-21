@@ -3,9 +3,16 @@ extends Node
 @export var inspection_in_progress: bool = false
 @export var present_on_screen_count: int = 1
 
+#database information
 @export var firstNames := []
+@export var lastNames := []
+@export var nameMisspelled := []
 @export var naughtyNice := []
-@export var presentDataIndex = 0
+@export var address := []
+@export var addressMisspelled := []
 
-@export var NaughtNiceFixing = "Naughty"
+@export var presentDataIndex = 0
+@export var fire: bool = false
+@export var updateTag: bool = true
+@export var NaughtNiceFixing = "1"
 @export var NaughtNiceFixingInput = "2"

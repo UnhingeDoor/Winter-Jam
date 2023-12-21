@@ -10,8 +10,12 @@ func _on_ray_cast_3d_button_pressed(button_action):
 			present_accepted.emit()
 			GlobalVariables.NaughtNiceFixingInput = "Nice"
 		"RejectButton":
+			GlobalVariables.fire = true
+			await get_tree().create_timer(3).timeout
+			GlobalVariables.fire = false
 			present_rejected.emit()
 			GlobalVariables.NaughtNiceFixingInput = "Naughty"
+			
 		"RecycleButton":
 			present_recycled.emit()
 		_:

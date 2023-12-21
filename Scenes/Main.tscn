@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=17 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
-[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/2m Wide/SM_Sword.glb" id="6_qd2yy"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Room.glb" id="6_qd2yy"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 [ext_resource type="PackedScene" uid="uid://clhcl6527p4j1" path="res://Scenes/VFX/vfx_snow.tscn" id="11_ieh2n"]
+[ext_resource type="Script" path="res://Scripts/fire_on_off.gd" id="14_cb1d0"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -71,6 +72,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.387)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.37, 0)
 
 [node name="Label3D" type="Label3D" parent="Present"]
+transform = Transform3D(25.993, 0, 0, 0, 27.2902, 0, 0, 0, 1, 0.32504, 0.47841, 0.875823)
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "Temp"
+font_size = 15
+outline_size = 2
 script = ExtResource("3_h73y8")
 
 [node name="UserInterface" parent="." instance=ExtResource("4_nljwa")]
@@ -82,7 +89,7 @@ one_shot = true
 autostart = true
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("5_dcnt0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.32356)
+transform = Transform3D(-1, 0, -7.99894e-08, 0, 1, 0, 8.74228e-08, 0, -0.914972, 0, 0, -0.0467588)
 
 [node name="SM_Room2" parent="." instance=ExtResource("6_qd2yy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -91,7 +98,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
 
 [node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
-transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.585, 0, 2.683)
+transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.19992, 0, 2.683)
 
 [node name="Label3D" type="Label3D" parent="SM_BookPedestal2"]
 transform = Transform3D(-18.8376, 0.0668507, 0.000115163, 0.0877074, 16.8125, 0.0177372, -0.0210567, 10.2346, -0.029138, 0.212945, 1.67882, -0.0210995)
@@ -104,16 +111,17 @@ vertical_alignment = 0
 script = ExtResource("8_5mffi")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.79508, 0, 2.68302)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3995, 0, 2.68302)
 
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0214051, 1.86655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105105, 1.86655)
 
 [node name="DM_FlameThrower2" parent="." instance=ExtResource("9_cc0at")]
 transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, 3.62104, 0.242134)
 
 [node name="Fire" parent="DM_FlameThrower2" instance=ExtResource("10_f6eys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19297e-07, -0.169316, 0)
+script = ExtResource("14_cb1d0")
 
 [node name="VFX_Snow" parent="." instance=ExtResource("11_ieh2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)

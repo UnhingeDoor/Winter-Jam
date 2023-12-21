@@ -46,6 +46,8 @@ func initialise(spawn_pos: Vector3 , obj):
 		GlobalVariables.NaughtNiceFixing = "Naughty"
 	
 	GlobalVariables.presentDataIndex += 1
+	
+	GlobalVariables.updateTag = true;
 
 func _on_inspection_entered():
 	GlobalVariables.inspection_in_progress = true

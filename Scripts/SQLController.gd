@@ -23,7 +23,7 @@ func _ready():
 	#
 	#database.create_table("presents", table)
 	
-	##Database has been created and data added	
+	##Database has been created and data added
 	
 	##Collecting data from the database
 	var tableName = "presents"
@@ -31,8 +31,16 @@ func _ready():
 	for i in range(0, database.query_result.size()):
 		GlobalVariables.firstNames.push_back(database.query_result[i]["firstName"])
 	for i in range(0, database.query_result.size()):
+		GlobalVariables.lastNames.push_back(database.query_result[i]["lastName"])
+	for i in range(0, database.query_result.size()):
+		GlobalVariables.nameMisspelled.push_back(database.query_result[i]["nameMisspelling"])
+	for i in range(0, database.query_result.size()):
 		GlobalVariables.naughtyNice.push_back(database.query_result[i]["naughtyNice"])
-	
+	for i in range(0, database.query_result.size()):
+		GlobalVariables.address.push_back(database.query_result[i]["address"])
+	for i in range(0, database.query_result.size()):
+		GlobalVariables.addressMisspelled.push_back(database.query_result[i]["addMisspelling"])
+		
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
