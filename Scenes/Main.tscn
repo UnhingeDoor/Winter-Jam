@@ -89,7 +89,7 @@ one_shot = true
 autostart = true
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("5_dcnt0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.32356)
+transform = Transform3D(-1, 0, -7.99894e-08, 0, 1, 0, 8.74228e-08, 0, -0.914972, 0, 0, -0.0467588)
 
 [node name="SM_Room2" parent="." instance=ExtResource("6_qd2yy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -98,7 +98,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
 
 [node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
-transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.585, 0, 2.683)
+transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.19992, 0, 2.683)
 
 [node name="Label3D" type="Label3D" parent="SM_BookPedestal2"]
 transform = Transform3D(-18.8376, 0.0668507, 0.000115163, 0.0877074, 16.8125, 0.0177372, -0.0210567, 10.2346, -0.029138, 0.212945, 1.67882, -0.0210995)
@@ -111,10 +111,10 @@ vertical_alignment = 0
 script = ExtResource("8_5mffi")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.79508, 0, 2.68302)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3995, 0, 2.68302)
 
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0214051, 1.86655)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105105, 1.86655)
 
 [node name="DM_FlameThrower2" parent="." instance=ExtResource("9_cc0at")]
 transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, 3.62104, 0.242134)
