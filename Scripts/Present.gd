@@ -41,8 +41,10 @@ func initialise(spawn_pos: Vector3 , obj):
 	isNice = true if randi_range(0, 1) == 0 else false
 	if isNice:
 		$MeshInstance3D.mesh.material.albedo_color = Color(0, 1, 0, 1)
+		GlobalVariables.NaughtNiceFixing = "Nice"
 	else:
 		$MeshInstance3D.mesh.material.albedo_color = Color(1, 0, 0, 1)
+		GlobalVariables.NaughtNiceFixing = "Naughty"
 	pass
 
 

@@ -8,8 +8,10 @@ func _on_ray_cast_3d_button_pressed(button_action):
 	match button_action:
 		"AcceptButton":
 			present_accepted.emit()
+			GlobalVariables.NaughtNiceFixingInput = "Nice"
 		"RejectButton":
 			present_rejected.emit()
+			GlobalVariables.NaughtNiceFixingInput = "Naughty"
 		"RecycleButton":
 			present_recycled.emit()
 		_:

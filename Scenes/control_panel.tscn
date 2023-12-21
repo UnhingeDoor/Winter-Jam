@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw4l8prdnx7yr"]
+[gd_scene load_steps=7 format=3 uid="uid://boqydor625xbu"]
 
 [ext_resource type="PackedScene" uid="uid://cnagdoi6p82mc" path="res://Models/Buttons table.glb" id="1_ubkla"]
 [ext_resource type="Script" path="res://Scripts/timer_label.gd" id="3_kga65"]

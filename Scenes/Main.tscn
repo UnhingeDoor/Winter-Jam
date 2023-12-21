@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
 [ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Sword.glb" id="6_qd2yy"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
-[ext_resource type="PackedScene" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
+[ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
 [ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
