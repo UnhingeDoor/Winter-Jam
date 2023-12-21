@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
-[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Sword.glb" id="6_qd2yy"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/2m Wide/SM_Sword.glb" id="6_qd2yy"]
 [ext_resource type="Script" path="res://Scripts/NaughtyNiceBook.gd" id="7_65oph"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://dw4l8prdnx7yr" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]

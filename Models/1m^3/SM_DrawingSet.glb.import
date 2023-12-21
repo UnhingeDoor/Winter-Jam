@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cryt6uaivldgn"
-path="res://.godot/imported/SM_Truck.glb-e512c1020e0667531032a2a3bd2915fa.scn"
+uid="uid://ceetxvs21ngwk"
+path="res://.godot/imported/SM_DrawingSet.glb-e2105632f683107af2762339279ba678.scn"
 
 [deps]
 
-source_file="res://Models/SM_Truck.glb"
-dest_files=["res://.godot/imported/SM_Truck.glb-e512c1020e0667531032a2a3bd2915fa.scn"]
+source_file="res://Models/1m^3/SM_DrawingSet.glb"
+dest_files=["res://.godot/imported/SM_DrawingSet.glb-e2105632f683107af2762339279ba678.scn"]
 
 [params]
 

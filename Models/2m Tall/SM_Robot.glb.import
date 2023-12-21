@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ck68nhfd5qv4w"
-path="res://.godot/imported/SM_Trainset.glb-ceb37e519b6a336c4bc46246ec6cd20c.scn"
+uid="uid://vvbuerq8bc4i"
+path="res://.godot/imported/SM_Robot.glb-d171f7443bbafd186cc7d09789e74178.scn"
 
 [deps]
 
-source_file="res://Models/SM_Trainset.glb"
-dest_files=["res://.godot/imported/SM_Trainset.glb-ceb37e519b6a336c4bc46246ec6cd20c.scn"]
+source_file="res://Models/2m Tall/SM_Robot.glb"
+dest_files=["res://.godot/imported/SM_Robot.glb-d171f7443bbafd186cc7d09789e74178.scn"]
 
 [params]
 

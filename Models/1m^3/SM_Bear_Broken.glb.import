@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://sqfvybss4bb7"
-path="res://.godot/imported/Book Stack.glb-e125982489cb96944d6487897bbf5c01.scn"
+uid="uid://dk8sighwlkiwo"
+path="res://.godot/imported/SM_Bear_Broken.glb-e57721e86106cf26012eedb72cab8b31.scn"
 
 [deps]
 
-source_file="res://Models/Book Stack.glb"
-dest_files=["res://.godot/imported/Book Stack.glb-e125982489cb96944d6487897bbf5c01.scn"]
+source_file="res://Models/1m^3/SM_Bear_Broken.glb"
+dest_files=["res://.godot/imported/SM_Bear_Broken.glb-e57721e86106cf26012eedb72cab8b31.scn"]
 
 [params]
 

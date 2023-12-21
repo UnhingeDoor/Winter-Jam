@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cq54c6bjohmvn"
-path="res://.godot/imported/SM_Bear.glb-112417b7716c2dec8183d02e49796bdc.scn"
+uid="uid://b1vwrfjisqsry"
+path="res://.godot/imported/SM_Pogo.glb-8ed304b837e6fa50d411b9cb1ba109cc.scn"
 
 [deps]
 
-source_file="res://Models/SM_Bear.glb"
-dest_files=["res://.godot/imported/SM_Bear.glb-112417b7716c2dec8183d02e49796bdc.scn"]
+source_file="res://Models/2m Tall/SM_Pogo.glb"
+dest_files=["res://.godot/imported/SM_Pogo.glb-8ed304b837e6fa50d411b9cb1ba109cc.scn"]
 
 [params]
 

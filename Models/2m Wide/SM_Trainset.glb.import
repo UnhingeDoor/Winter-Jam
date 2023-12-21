@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ceetxvs21ngwk"
-path="res://.godot/imported/SM_DrawingSet.glb-f16cce9deb4b62b83359de1cce026169.scn"
+uid="uid://ck68nhfd5qv4w"
+path="res://.godot/imported/SM_Trainset.glb-077e28d49969e0c0cc6df3cac55bb1d2.scn"
 
 [deps]
 
-source_file="res://Models/SM_DrawingSet.glb"
-dest_files=["res://.godot/imported/SM_DrawingSet.glb-f16cce9deb4b62b83359de1cce026169.scn"]
+source_file="res://Models/2m Wide/SM_Trainset.glb"
+dest_files=["res://.godot/imported/SM_Trainset.glb-077e28d49969e0c0cc6df3cac55bb1d2.scn"]
 
 [params]
 

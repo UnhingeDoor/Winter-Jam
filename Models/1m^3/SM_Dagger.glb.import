@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5f0yjqwah6kg"
-path="res://.godot/imported/SM_Sword.glb-5beb694a0138f4acf77478f0ea0cd27a.scn"
+uid="uid://djjq5w5em3tn2"
+path="res://.godot/imported/SM_Dagger.glb-5a58cd880d6d253364519b91c574ab7e.scn"
 
 [deps]
 
-source_file="res://Models/SM_Sword.glb"
-dest_files=["res://.godot/imported/SM_Sword.glb-5beb694a0138f4acf77478f0ea0cd27a.scn"]
+source_file="res://Models/1m^3/SM_Dagger.glb"
+dest_files=["res://.godot/imported/SM_Dagger.glb-5a58cd880d6d253364519b91c574ab7e.scn"]
 
 [params]
 
