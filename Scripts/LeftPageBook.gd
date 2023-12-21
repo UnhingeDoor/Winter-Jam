@@ -9,7 +9,7 @@ func _process(delta):
 	
 	text = ""
 	
-	##Displays Three Names at a time (allowing for implementation 0f wishlist Later on)
+	##Displays Three Names at a time (allowing for implementation of wishlist Later on)
 	if GlobalVariables.presentDataIndex == 0:
 		text = text+"%s --- " % GlobalVariables.firstNames[GlobalVariables.presentDataIndex]
 		text = text+"%s\n" % GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex]
@@ -40,5 +40,4 @@ func _process(delta):
 		text = text+"%s --- " % GlobalVariables.firstNames[GlobalVariables.presentDataIndex]
 		text = text+"%s\n" % GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex]
 		
-	GlobalVariables.updateNNBook = false
 	pass

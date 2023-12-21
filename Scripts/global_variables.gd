@@ -12,7 +12,7 @@ extends Node
 @export var addressMisspelled := []
 
 @export var presentDataIndex = 0
+@export var fire: bool = false
 @export var updateTag: bool = true
-@export var updateNNBook: bool = true
 @export var NaughtNiceFixing = "1"
 @export var NaughtNiceFixingInput = "2"

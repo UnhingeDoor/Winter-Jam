@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=17 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
-[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/2m Wide/SM_Sword.glb" id="6_qd2yy"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Room.glb" id="6_qd2yy"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 [ext_resource type="PackedScene" uid="uid://clhcl6527p4j1" path="res://Scenes/VFX/vfx_snow.tscn" id="11_ieh2n"]
+[ext_resource type="Script" path="res://Scripts/fire_on_off.gd" id="14_cb1d0"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -120,6 +121,7 @@ transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, 3.621
 
 [node name="Fire" parent="DM_FlameThrower2" instance=ExtResource("10_f6eys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19297e-07, -0.169316, 0)
+script = ExtResource("14_cb1d0")
 
 [node name="VFX_Snow" parent="." instance=ExtResource("11_ieh2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)

@@ -48,7 +48,6 @@ func initialise(spawn_pos: Vector3 , obj):
 	GlobalVariables.presentDataIndex += 1
 	
 	GlobalVariables.updateTag = true;
-	GlobalVariables.updateNNBook = true;
 
 func _on_inspection_entered():
 	GlobalVariables.inspection_in_progress = true
