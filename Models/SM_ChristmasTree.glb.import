@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5f0yjqwah6kg"
-path="res://.godot/imported/SM_Sword.glb-5beb694a0138f4acf77478f0ea0cd27a.scn"
+uid="uid://c1bbttpe4xjuo"
+path="res://.godot/imported/SM_ChristmasTree.glb-7b0ffeb496ef34544b8ce5820fbe08fc.scn"
 
 [deps]
 
-source_file="res://Models/SM_Sword.glb"
-dest_files=["res://.godot/imported/SM_Sword.glb-5beb694a0138f4acf77478f0ea0cd27a.scn"]
+source_file="res://Models/SM_ChristmasTree.glb"
+dest_files=["res://.godot/imported/SM_ChristmasTree.glb-7b0ffeb496ef34544b8ce5820fbe08fc.scn"]
 
 [params]
 

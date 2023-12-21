@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ck68nhfd5qv4w"
-path="res://.godot/imported/SM_Trainset.glb-ceb37e519b6a336c4bc46246ec6cd20c.scn"
+uid="uid://djjq5w5em3tn2"
+path="res://.godot/imported/SM_Dagger.glb-5a58cd880d6d253364519b91c574ab7e.scn"
 
 [deps]
 
-source_file="res://Models/SM_Trainset.glb"
-dest_files=["res://.godot/imported/SM_Trainset.glb-ceb37e519b6a336c4bc46246ec6cd20c.scn"]
+source_file="res://Models/1m^3/SM_Dagger.glb"
+dest_files=["res://.godot/imported/SM_Dagger.glb-5a58cd880d6d253364519b91c574ab7e.scn"]
 
 [params]
 

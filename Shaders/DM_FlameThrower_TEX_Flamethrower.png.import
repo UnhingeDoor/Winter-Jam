@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2xgx4phud5or"
-path.s3tc="res://.godot/imported/DM_FlameThrower_TEX_Flamethrower.png-7ef3c4bf115783958e4965446afc3626.s3tc.ctex"
+path.s3tc="res://.godot/imported/DM_FlameThrower_TEX_Flamethrower.png-5559184e17693231e12666839899529b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/DM_FlameThrower_TEX_Flamethrower.png"
-dest_files=["res://.godot/imported/DM_FlameThrower_TEX_Flamethrower.png-7ef3c4bf115783958e4965446afc3626.s3tc.ctex"]
+source_file="res://Shaders/DM_FlameThrower_TEX_Flamethrower.png"
+dest_files=["res://.godot/imported/DM_FlameThrower_TEX_Flamethrower.png-5559184e17693231e12666839899529b.s3tc.ctex"]
 
 [params]
 

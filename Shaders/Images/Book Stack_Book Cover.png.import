@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bie3u6uwb0ny8"
-path.s3tc="res://.godot/imported/SM_Sword_Sword_Hilt.png-e779967b075e54df32a06066c6fe834a.s3tc.ctex"
+uid="uid://b8g1c775dvkdn"
+path.s3tc="res://.godot/imported/Book Stack_Book Cover.png-1cc4a06d0a867bc6eac271160e591a4f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Shaders/Images/SM_Sword_Sword_Hilt.png"
-dest_files=["res://.godot/imported/SM_Sword_Sword_Hilt.png-e779967b075e54df32a06066c6fe834a.s3tc.ctex"]
+source_file="res://Shaders/Images/Book Stack_Book Cover.png"
+dest_files=["res://.godot/imported/Book Stack_Book Cover.png-1cc4a06d0a867bc6eac271160e591a4f.s3tc.ctex"]
 
 [params]
 
