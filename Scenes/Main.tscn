@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=17 format=3 uid="uid://rrl6e6temvop"]
 
-[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
+[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
-[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/2m Wide/SM_Sword.glb" id="6_qd2yy"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Room.glb" id="6_qd2yy"]
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
-[ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
+[ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
+[ext_resource type="Script" path="res://Scripts/name_printout.gd" id="11_7huuh"]
 [ext_resource type="PackedScene" uid="uid://clhcl6527p4j1" path="res://Scenes/VFX/vfx_snow.tscn" id="11_ieh2n"]
 [ext_resource type="Script" path="res://Scripts/fire_on_off.gd" id="14_cb1d0"]
 
@@ -103,6 +104,16 @@ script = ExtResource("8_5mffi")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3995, 0, 2.68302)
+
+[node name="Label3D" type="Label3D" parent="SM_ChildList"]
+transform = Transform3D(-4.08218, -1.6001e-07, -1.31134e-07, -5.35313e-07, -1.6001e-07, 1, -1.78438e-07, 3.6606, 4.37114e-08, 0, 0.921608, -0.389209)
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "test"
+outline_size = 0
+autowrap_mode = 2
+width = 600.0
+script = ExtResource("11_7huuh")
 
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105105, 1.86655)
