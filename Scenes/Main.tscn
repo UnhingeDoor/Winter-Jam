@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
 [ext_resource type="Script" path="res://Scripts/RightPageBook.gd" id="9_1abov"]
-[ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
+[ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 [ext_resource type="Script" path="res://Scripts/name_printout.gd" id="11_7huuh"]

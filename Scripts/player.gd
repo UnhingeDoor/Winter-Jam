@@ -23,5 +23,7 @@ func _on_ray_cast_3d_button_pressed(button_action):
 			"RecycleButton":
 				present_recycled.emit()
 				lock_button()
+			"XrayButton":
+				XRay.emit()
 			_:
 				print_debug("Non handled button event: ", button_action)
