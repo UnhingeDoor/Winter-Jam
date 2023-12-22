@@ -12,6 +12,7 @@ extends Node
 @export var naughtyNice := []
 @export var address := []
 @export var addressMisspelled := []
+@export var wishList :=[]
 
 @export var presentDataIndex = 0
 @export var fire: bool = false

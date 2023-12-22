@@ -12,21 +12,10 @@ script = ExtResource("1_n1b45")
 
 [node name="GiftType1" parent="." instance=ExtResource("2_i7kwm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
-
-[node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
 visible = false
 
-[node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
-visible = false
-
-[node name="Coal" parent="." instance=ExtResource("5_pe3km")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, 0)
-visible = false
-
-[node name="Tag" type="Label3D" parent="."]
-transform = Transform3D(0.941309, -7.44456, -0.0438351, 5.69184, 0.477083, 0.132416, -2.80189, -1.53188, 0.254267, -0.176172, 0.355502, 0.55027)
+[node name="Tag" type="Label3D" parent="GiftType1"]
+transform = Transform3D(-0.94131, 7.44456, 0.0438352, 5.69184, 0.477083, 0.132416, 2.80189, 1.53188, -0.254267, 0.176172, 0.855502, -0.55027)
 pixel_size = 0.0001
 modulate = Color(0, 0, 0, 1)
 text = "test"
@@ -35,6 +24,39 @@ outline_size = 0
 autowrap_mode = 2
 width = 350.0
 script = ExtResource("6_bqmiy")
+
+[node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
+visible = false
+
+[node name="Tag" type="Label3D" parent="GiftType2"]
+transform = Transform3D(2.95484, 1.18118, -1.5445, 5.84483, 0.917506, 0.823567, 1.43863, -6.15365, -0.173671, -0.555089, 0.855875, -0.172266)
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "test"
+font_size = 20
+outline_size = 0
+autowrap_mode = 2
+width = 300.0
+script = ExtResource("6_bqmiy")
+
+[node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
+
+[node name="Tag" type="Label3D" parent="GiftType3"]
+transform = Transform3D(-1.17959, 6.08134, 0.380903, 5.93398, 0.366769, 0.812757, 2.89123, 1.72837, -1.5127, 0.172818, 1.82043, -0.560715)
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "test"
+font_size = 20
+outline_size = 0
+autowrap_mode = 2
+width = 300.0
+script = ExtResource("6_bqmiy")
+
+[node name="Coal" parent="." instance=ExtResource("5_pe3km")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, 0)
+visible = false
 
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]
 [connection signal="inspection_exited" from="." to="." method="_on_inspection_exited"]
