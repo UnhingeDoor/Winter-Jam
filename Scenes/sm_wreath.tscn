@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf6c5q2m63iuq"]
+
+[ext_resource type="PackedScene" uid="uid://bqg7kk0f4s36a" path="res://Models/SM_Wreath.glb" id="1_rwkyx"]
+[ext_resource type="Texture2D" uid="uid://cjyvn10q8w4uv" path="res://Shaders/Images/TEX_Leaves.png" id="2_i5xg1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukux2"]
+transparency = 3
+alpha_hash_scale = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.298039, 0.639216, 0.129412, 1)
+albedo_texture = ExtResource("2_i5xg1")
+metallic_specular = 0.0
+
+[node name="SM_Wreath" instance=ExtResource("1_rwkyx")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ukux2")

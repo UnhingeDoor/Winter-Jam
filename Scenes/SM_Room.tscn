@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjvmr5n7cq8o"]
+
+[ext_resource type="PackedScene" uid="uid://cxcjkap0q7536" path="res://Models/SM_Room.glb" id="1_56ll5"]
+[ext_resource type="Texture2D" uid="uid://bbwpekrm1tqvq" path="res://Shaders/Images/TEX_Room.png" id="2_jlnov"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjsia"]
+albedo_texture = ExtResource("2_jlnov")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8v3e"]
+albedo_color = Color(0.466667, 0.247059, 0.180392, 1)
+
+[node name="SM_Room" instance=ExtResource("1_56ll5")]
+
+[node name="Plane_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kjsia")
+surface_material_override/1 = SubResource("StandardMaterial3D_i8v3e")
