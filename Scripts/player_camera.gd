@@ -10,7 +10,8 @@ const RAY_LENGTH = 1000
 @export var is_window_focused: bool = true
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	rotation = Vector3(0, 0, 0)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _input(event):
@@ -36,5 +37,5 @@ func toggle_focus():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		# Player using camera
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	is_window_focused = not is_window_focused

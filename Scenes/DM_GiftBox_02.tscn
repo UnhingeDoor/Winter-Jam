@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwutyikk8d7px"]
+
+[ext_resource type="PackedScene" uid="uid://ds374y45rblif" path="res://Models/SM_GiftBox_02.glb" id="1_c5nlx"]
+[ext_resource type="Material" uid="uid://cifdvt8lx2ilv" path="res://Scenes/MAT_Tag.tres" id="2_238fa"]
+
+[node name="SM_GiftBox_022" instance=ExtResource("1_c5nlx")]
+
+[node name="SM_GiftBox_02" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_238fa")
