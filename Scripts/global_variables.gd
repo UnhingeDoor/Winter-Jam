@@ -15,4 +15,3 @@ extends Node
 
 @export var presentDataIndex = 0
 @export var fire: bool = false
-@export var updateTag: bool = true
