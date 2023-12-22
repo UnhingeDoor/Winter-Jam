@@ -1,22 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuxdvqwiaaatv"]
+[gd_scene load_steps=6 format=3 uid="uid://cuxdvqwiaaatv"]
 
 [ext_resource type="Script" path="res://Scripts/present.gd" id="1_n1b45"]
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="2_i7kwm"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="3_1t3jy"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="4_vqfwf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04au4"]
-albedo_color = Color(1, 0.14902, 0.14902, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_jf71g"]
-material = SubResource("StandardMaterial3D_04au4")
+[ext_resource type="PackedScene" uid="uid://4cdxyajgvv8w" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
 
 [node name="Present" type="Node3D"]
 script = ExtResource("1_n1b45")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("BoxMesh_jf71g")
 
 [node name="GiftType1" parent="." instance=ExtResource("2_i7kwm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
@@ -28,6 +19,10 @@ visible = false
 
 [node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
+visible = false
+
+[node name="Coal" parent="." instance=ExtResource("5_pe3km")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, 0)
 visible = false
 
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]

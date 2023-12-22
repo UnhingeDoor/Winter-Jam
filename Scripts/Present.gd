@@ -98,6 +98,8 @@ func _on_player_present_accepted():
 
 func _on_player_present_rejected():
 	if is_getting_inspected:
+		gift_box.hide()
+		$Coal.show()
 		inspection_exited.emit()
 		is_getting_inspected = false
 		is_inspected = true

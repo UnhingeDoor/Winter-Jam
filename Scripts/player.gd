@@ -15,7 +15,6 @@ func _on_ray_cast_3d_button_pressed(button_action):
 			GlobalVariables.fire = false
 			present_rejected.emit()
 			GlobalVariables.NaughtNiceFixingInput = "Naughty"
-			
 		"RecycleButton":
 			present_recycled.emit()
 		_:
