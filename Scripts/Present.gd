@@ -26,6 +26,7 @@ func _ready():
 	gift_box = randomise_gift_shape()
 	randomise_present_colours(gift_box)
 
+
 func _process(_delta):
 	# Despawn the present when it's out of frame
 	if position.x > player.position.x + 10:
@@ -53,8 +54,6 @@ func initialise(spawn_pos: Vector3 , obj):
 	position = spawn_pos
 	
 	GlobalVariables.presentDataIndex += 1
-	
-	GlobalVariables.updateTag = true;
 
 
 func randomise_gift_shape() -> Node3D:

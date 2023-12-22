@@ -13,7 +13,6 @@ func _process(_delta):
 	var randomAddress = rnd.randf_range(0,10)
 	if randomAddress == 1:
 		displayedAddress = GlobalVariables.addressMisspelled[GlobalVariables.presentDataIndex]
-		GlobalVariables.NaughtNiceFixing = "Fixing"
 	else: 
 		displayedAddress = GlobalVariables.address[GlobalVariables.presentDataIndex]
 	
@@ -21,14 +20,11 @@ func _process(_delta):
 	var randomName = rnd.randf_range(0,5)
 	if randomName == 1:
 		displayedName = GlobalVariables.nameMisspelled[GlobalVariables.presentDataIndex]
-		GlobalVariables.NaughtNiceFixing = "Fixing"
 	else: 
 		displayedName = GlobalVariables.firstNames[GlobalVariables.presentDataIndex] + " " +GlobalVariables.lastNames[GlobalVariables.presentDataIndex] 
 	
 	##Updates Tag
-	if GlobalVariables.updateTag:
-		text = ""
-		text = text+"%s\n" % displayedName
-		text = text+"%s" % displayedAddress
-		GlobalVariables.updateTag = false;
-	
+	text = ""
+	text = text+"%s\n" % displayedName
+	text = text+"%s" % displayedAddress
+

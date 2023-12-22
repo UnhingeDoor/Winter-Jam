@@ -16,6 +16,7 @@ mesh = SubResource("CylinderMesh_mqics")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.5)
 
 [node name="PlayerCamera" type="Camera3D" parent="CameraPivot"]
+near = 0.018
 script = ExtResource("1_2epd8")
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot/PlayerCamera"]
