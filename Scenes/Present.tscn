@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuxdvqwiaaatv"]
 
 [ext_resource type="Script" path="res://Scripts/present.gd" id="1_n1b45"]
-[ext_resource type="PackedScene" path="res://Scenes/DM_GiftBox_01.tscn" id="2_i7kwm"]
-[ext_resource type="PackedScene" path="res://Scenes/DM_GiftBox_02.tscn" id="3_1t3jy"]
-[ext_resource type="PackedScene" path="res://Scenes/DM_GiftBox_03.tscn" id="4_vqfwf"]
-[ext_resource type="PackedScene" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
+[ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="2_i7kwm"]
+[ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="3_1t3jy"]
+[ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="4_vqfwf"]
+[ext_resource type="PackedScene" uid="uid://4cdxyajgvv8w" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
 [ext_resource type="Script" path="res://Scripts/present_tag.gd" id="6_bqmiy"]
 
 [node name="Present" type="Node3D"]

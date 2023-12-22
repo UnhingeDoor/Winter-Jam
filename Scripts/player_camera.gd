@@ -34,9 +34,9 @@ func _input(event):
 
 func _process(delta):
 	if is_window_focused:
-		rotation.x -= mouse_delta.y * delta * sens_modifier * (zoom_sens_modifier if is_zoomed else 1)
+		rotation.x -= mouse_delta.y * delta * sens_modifier * (zoom_sens_modifier if is_zoomed else 1.0)
 		rotation.x = clamp(rotation.x, min_rotation_x, max_rotation_x)
-		rotation.y -= mouse_delta.x * delta * sens_modifier * (zoom_sens_modifier if is_zoomed else 1)
+		rotation.y -= mouse_delta.x * delta * sens_modifier * (zoom_sens_modifier if is_zoomed else 1.0)
 		rotation.y = clamp(rotation.y, min_rotation_y, max_rotation_y)
 		# Stop moving the mouse
 		mouse_delta = Vector2()

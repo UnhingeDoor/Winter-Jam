@@ -18,6 +18,12 @@ var gift_box: Node3D
 
 
 @onready var gift_boxes:= [$GiftType1, $GiftType2, $GiftType3]
+
+@onready var gift_cube_presents:= []
+@onready var gift_long_presents:= []
+@onready var gift_tall_presents:= []
+
+
 @onready var player: Node3D = get_node("../Player")
 
 
@@ -78,6 +84,7 @@ func randomise_present_colours(present) -> void:
 	
 	present.get_child(0).mesh.surface_set_material(0, ribbon_material)
 	present.get_child(0).mesh.surface_set_material(1, box_material)
+	print_debug("Randomised the colour")
 
 
 func compare_actions(correct, taken):
@@ -100,6 +107,7 @@ func finish_inspection():
 	inspection_exited.emit()
 	is_getting_inspected = false
 	is_inspected = true
+	GlobalVariables.lock_button = false
 
 
 func _on_inspection_entered():
