@@ -2,6 +2,7 @@ extends Node
 
 @export var inspection_in_progress: bool = false
 @export var present_on_screen_count: int = 1
+@export var lock_button: bool = false
 
 @export var score: int = 0
 

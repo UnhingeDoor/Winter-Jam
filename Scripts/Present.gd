@@ -107,6 +107,7 @@ func finish_inspection():
 	inspection_exited.emit()
 	is_getting_inspected = false
 	is_inspected = true
+	GlobalVariables.lock_button = false
 
 
 func _on_inspection_entered():
