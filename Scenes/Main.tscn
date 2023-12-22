@@ -55,6 +55,7 @@ func instantiate_object(present):
 func reset_global_variables():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count = 1
+	GlobalVariables.score = 0
 
 
 func _on_level_timer_timeout():
