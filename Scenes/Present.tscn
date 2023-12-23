@@ -61,3 +61,6 @@ visible = false
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]
 [connection signal="inspection_exited" from="." to="." method="_on_inspection_exited"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="Need_repair" from="GiftType1/Tag" to="." method="_on_tag_need_repair"]
+[connection signal="Need_repair" from="GiftType2/Tag" to="." method="_on_tag_need_repair"]
+[connection signal="Need_repair" from="GiftType3/Tag" to="." method="_on_tag_need_repair"]

@@ -49,13 +49,21 @@ func initialise(spawn_pos: Vector3 , obj):
 	obj.present_rejected.connect(_on_player_present_rejected)
 	obj.present_recycled.connect(_on_player_present_recycled)
 	
+<<<<<<< Updated upstream
 	is_nice = randi_range(0, 1) # false, true
 	correct_action = actions.ACCEPT if is_nice else actions.REJECT
+=======
+	is_nice = true if GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex] == "Nice" else false
+	if is_nice:
+		correct_action = actions.ACCEPT
+	else:
+		correct_action = actions.REJECT
+>>>>>>> Stashed changes
 	position = spawn_pos
 	
 	GlobalVariables.presentDataIndex += 1
 
-
+	
 func randomise_gift_shape() -> Node3D:
 	var gift_type_idx = randi_range(0, 2) # 3 Types
 	# Only show the right one
@@ -132,3 +140,6 @@ func _on_player_present_recycled():
 		compare_actions(correct_action, action_taken)
 		finish_inspection()
 
+
+func _on_tag_need_repair():
+	correct_action = actions.RECYCLE

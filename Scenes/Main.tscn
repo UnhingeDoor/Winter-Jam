@@ -5,8 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Scenes/XrayLayer.gd" id="5_p3w7c"]
 [ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/SM_Room.glb" id="6_qd2yy"]
+=======
+[ext_resource type="Script" path="res://Scripts/XrayLayer.gd" id="5_p3w7c"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/2m Wide/SM_Sword.glb" id="6_qd2yy"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
@@ -70,9 +75,6 @@ present_scene = ExtResource("1_mb113")
 
 [node name="Player" parent="." instance=ExtResource("2_uywyi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.387)
-
-[node name="Present" parent="." instance=ExtResource("1_mb113")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.37, 0)
 
 [node name="UserInterface" parent="." instance=ExtResource("4_nljwa")]
 script = ExtResource("4_t0cif")
@@ -150,8 +152,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="XRay" from="Player" to="UserInterface/CanvasLayer/ColorRect" method="_on_player_x_ray"]
-[connection signal="present_accepted" from="Player" to="Present" method="_on_player_present_accepted"]
-[connection signal="present_recycled" from="Player" to="Present" method="_on_player_present_recycled"]
-[connection signal="present_rejected" from="Player" to="Present" method="_on_player_present_rejected"]
-[connection signal="tree_exited" from="Present" to="." method="_on_present_tree_exited"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
