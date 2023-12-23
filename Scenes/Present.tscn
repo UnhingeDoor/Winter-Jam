@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://cuxdvqwiaaatv"]
+[gd_scene load_steps=21 format=3 uid="uid://cuxdvqwiaaatv"]
 
 [ext_resource type="Script" path="res://Scripts/present.gd" id="1_n1b45"]
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="2_i7kwm"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="3_1t3jy"]
 [ext_resource type="PackedScene" uid="uid://cq54c6bjohmvn" path="res://Models/1m^3/SM_Bear.glb" id="4_tr72l"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="4_vqfwf"]
-[ext_resource type="PackedScene" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
+[ext_resource type="PackedScene" uid="uid://dk8sighwlkiwo" path="res://Models/1m^3/SM_Bear_Broken.glb" id="5_8ll75"]
+[ext_resource type="PackedScene" uid="uid://4cdxyajgvv8w" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
 [ext_resource type="Script" path="res://Scripts/present_tag.gd" id="6_bqmiy"]
 [ext_resource type="PackedScene" uid="uid://djjq5w5em3tn2" path="res://Models/1m^3/SM_Dagger.glb" id="6_strbc"]
 [ext_resource type="PackedScene" uid="uid://ceetxvs21ngwk" path="res://Models/1m^3/SM_DrawingSet.glb" id="7_5besy"]
@@ -38,19 +39,28 @@ autowrap_mode = 2
 width = 350.0
 script = ExtResource("6_bqmiy")
 
-[node name="Bear" parent="GiftType1" instance=ExtResource("4_tr72l")]
+[node name="SM_Bear2" parent="GiftType1" instance=ExtResource("4_tr72l")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
-[node name="Dagger" parent="GiftType1" instance=ExtResource("6_strbc")]
+[node name="SM_Bear_Broken2" parent="GiftType1" instance=ExtResource("5_8ll75")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
-[node name="Drawing Set" parent="GiftType1" instance=ExtResource("7_5besy")]
+[node name="SM_Dagger2" parent="GiftType1" instance=ExtResource("6_strbc")]
+transform = Transform3D(-0.585779, -0.556974, -0.588764, 0.718666, -0.0211286, -0.695035, 0.374677, -0.830261, 0.412655, 0, 0.42961, 0)
 visible = false
 
-[node name="Dynamite" parent="GiftType1" instance=ExtResource("8_5ga42")]
+[node name="SM_DrawingSet2" parent="GiftType1" instance=ExtResource("7_5besy")]
+transform = Transform3D(-1, 1.68888e-07, -4.21694e-08, 8.44439e-08, 0.258819, -0.965926, -1.52219e-07, -0.965926, -0.258819, 0, 0.471446, 0)
 visible = false
 
-[node name="Toy Truck" parent="GiftType1" instance=ExtResource("9_h0td3")]
+[node name="SM_Dynamite2" parent="GiftType1" instance=ExtResource("8_5ga42")]
+transform = Transform3D(-4.15258e-08, 0, 0.95, 0, 0.95, 0, -0.95, 0, -4.15258e-08, 0, 0.203402, 0)
+visible = false
+
+[node name="SM_Truck2" parent="GiftType1" instance=ExtResource("9_h0td3")]
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 0.117602, 0)
 visible = false
 
 [node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
@@ -68,14 +78,15 @@ autowrap_mode = 2
 width = 300.0
 script = ExtResource("6_bqmiy")
 
-[node name="Sword" parent="GiftType2" instance=ExtResource("11_wskli")]
+[node name="SM_Sword2" parent="GiftType2" instance=ExtResource("11_wskli")]
+transform = Transform3D(0.92394, -0.354906, 0.14275, 0.382538, 0.857198, -0.344783, -1.67194e-10, 0.373166, 0.927765, -1.50123e-08, 0.292547, 0.343442)
 visible = false
 
-[node name="Train Set" parent="GiftType2" instance=ExtResource("12_qkr0c")]
-visible = false
+[node name="SM_Trainset" parent="GiftType2" instance=ExtResource("12_qkr0c")]
+transform = Transform3D(-0.95, 0, -8.30516e-08, 0, 0.95, 0, 8.30516e-08, 0, -0.95, -0.0789533, 0.19735, -3.45116e-09)
 
 [node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, -0.5, 0)
 visible = false
 
 [node name="Tag" type="Label3D" parent="GiftType3"]
@@ -89,17 +100,19 @@ autowrap_mode = 2
 width = 300.0
 script = ExtResource("6_bqmiy")
 
-[node name="Robot" parent="GiftType3" instance=ExtResource("14_qp6o8")]
+[node name="SM_Robot2" parent="GiftType3" instance=ExtResource("14_qp6o8")]
 visible = false
 
-[node name="Books" parent="GiftType3" instance=ExtResource("15_vgntl")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+[node name="Book Stack" parent="GiftType3" instance=ExtResource("15_vgntl")]
+transform = Transform3D(-4.15258e-08, 0, -0.95, 0, 0.95, 0, 0.95, 0, -4.15258e-08, 0, 0, 0)
 visible = false
 
-[node name="Creature" parent="GiftType3" instance=ExtResource("16_w7n86")]
+[node name="SM_CreaturePlush" parent="GiftType3" instance=ExtResource("16_w7n86")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
-[node name="Pogo Stick" parent="GiftType3" instance=ExtResource("17_tik8e")]
+[node name="SM_Pogo2" parent="GiftType3" instance=ExtResource("17_tik8e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 visible = false
 
 [node name="Coal" parent="." instance=ExtResource("5_pe3km")]

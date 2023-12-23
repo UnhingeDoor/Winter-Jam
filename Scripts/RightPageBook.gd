@@ -30,13 +30,7 @@ func _process(_delta):
 			else:
 				text = text + "%s, " % GlobalVariables.wishList[counter]
 			counter += counter
-		
-		
-	
-	
-	
-	
-	
+
 	text = text+"%s" % GlobalVariables.currentPresent
 	text = text+"%s\n\n" % GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex]
 	
