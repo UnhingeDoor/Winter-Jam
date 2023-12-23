@@ -12,7 +12,6 @@ func _ready():
 	if self.visible:
 		##Random chance for incorrect spelling: Address 
 		var randomAddress = rnd.randi_range(0,5)
-		print(randomAddress)
 		if randomAddress == 1:
 			displayedAddress = GlobalVariables.addressMisspelled[GlobalVariables.presentDataIndex]
 			need_repair.emit()
@@ -21,7 +20,6 @@ func _ready():
 		
 		##Random chance for incorrect spelling: Name
 		var randomName = rnd.randi_range(0,5)
-		print(randomName)
 		if randomName == 1:
 			displayedName = GlobalVariables.nameMisspelled[GlobalVariables.presentDataIndex]
 			need_repair.emit()

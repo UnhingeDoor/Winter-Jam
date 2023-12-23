@@ -25,5 +25,6 @@ func _on_ray_cast_3d_button_pressed(button_action):
 				lock_button()
 			"XrayButton":
 				XRay.emit()
+				GlobalVariables.xrayOn = not GlobalVariables.xrayOn
 			_:
 				print_debug("Non handled button event: ", button_action)

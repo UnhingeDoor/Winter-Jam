@@ -43,3 +43,9 @@ func _process(_delta):
 	text = ""
 	
 	pass
+
+
+func _on_present_present_content():
+	
+	
+	pass # Replace with function body.

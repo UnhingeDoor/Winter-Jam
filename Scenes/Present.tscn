@@ -1,11 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuxdvqwiaaatv"]
+[gd_scene load_steps=21 format=3 uid="uid://cuxdvqwiaaatv"]
 
 [ext_resource type="Script" path="res://Scripts/present.gd" id="1_n1b45"]
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="2_i7kwm"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="3_1t3jy"]
+[ext_resource type="PackedScene" uid="uid://cq54c6bjohmvn" path="res://Models/1m^3/SM_Bear.glb" id="4_tr72l"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="4_vqfwf"]
+[ext_resource type="PackedScene" uid="uid://dk8sighwlkiwo" path="res://Models/1m^3/SM_Bear_Broken.glb" id="5_8ll75"]
 [ext_resource type="PackedScene" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
 [ext_resource type="Script" path="res://Scripts/present_tag.gd" id="6_bqmiy"]
+[ext_resource type="PackedScene" uid="uid://djjq5w5em3tn2" path="res://Models/1m^3/SM_Dagger.glb" id="6_strbc"]
+[ext_resource type="PackedScene" uid="uid://ceetxvs21ngwk" path="res://Models/1m^3/SM_DrawingSet.glb" id="7_5besy"]
+[ext_resource type="PackedScene" uid="uid://3frl3x20xs63" path="res://Models/1m^3/SM_Dynamite.glb" id="8_5ga42"]
+[ext_resource type="PackedScene" uid="uid://cryt6uaivldgn" path="res://Models/1m^3/SM_Truck.glb" id="9_h0td3"]
+[ext_resource type="PackedScene" uid="uid://5f0yjqwah6kg" path="res://Models/2m Wide/SM_Sword.glb" id="11_wskli"]
+[ext_resource type="PackedScene" uid="uid://ck68nhfd5qv4w" path="res://Models/2m Wide/SM_Trainset.glb" id="12_qkr0c"]
+[ext_resource type="PackedScene" uid="uid://vvbuerq8bc4i" path="res://Models/2m Tall/SM_Robot.glb" id="14_qp6o8"]
+[ext_resource type="PackedScene" uid="uid://sqfvybss4bb7" path="res://Models/2m Tall/Book Stack.glb" id="15_vgntl"]
+[ext_resource type="PackedScene" uid="uid://d1edtoc4bpjnv" path="res://Models/2m Tall/SM_CreaturePlush.glb" id="16_w7n86"]
+[ext_resource type="PackedScene" uid="uid://b1vwrfjisqsry" path="res://Models/2m Tall/SM_Pogo.glb" id="17_tik8e"]
+[ext_resource type="PackedScene" uid="uid://cymhbpp2f7clr" path="res://Models/DM_Tag.glb" id="19_1f2oo"]
+[ext_resource type="Script" path="res://Scripts/CoalTag.gd" id="20_ylk8p"]
 
 [node name="Present" type="Node3D"]
 script = ExtResource("1_n1b45")
@@ -25,10 +39,29 @@ autowrap_mode = 2
 width = 350.0
 script = ExtResource("6_bqmiy")
 
+[node name="SM_Bear2" parent="GiftType1" instance=ExtResource("4_tr72l")]
+visible = false
+
+[node name="SM_Bear_Broken2" parent="GiftType1" instance=ExtResource("5_8ll75")]
+visible = false
+
+[node name="SM_Dagger2" parent="GiftType1" instance=ExtResource("6_strbc")]
+visible = false
+
+[node name="SM_DrawingSet2" parent="GiftType1" instance=ExtResource("7_5besy")]
+visible = false
+
+[node name="SM_Dynamite2" parent="GiftType1" instance=ExtResource("8_5ga42")]
+visible = false
+
+[node name="SM_Truck2" parent="GiftType1" instance=ExtResource("9_h0td3")]
+visible = false
+
 [node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
+visible = false
 
-[node name="Tag2" type="Label3D" parent="GiftType2"]
+[node name="Tag" type="Label3D" parent="GiftType2"]
 transform = Transform3D(2.89123, 1.72837, -1.5127, 5.92184, 0.42778, 0.816539, 1.23908, -6.07735, -0.372727, -0.560574, 0.858428, -0.177167)
 pixel_size = 0.0001
 modulate = Color(0, 0, 0, 1)
@@ -38,6 +71,12 @@ outline_size = 0
 autowrap_mode = 2
 width = 300.0
 script = ExtResource("6_bqmiy")
+
+[node name="SM_Sword2" parent="GiftType2" instance=ExtResource("11_wskli")]
+visible = false
+
+[node name="SM_Trainset" parent="GiftType2" instance=ExtResource("12_qkr0c")]
+visible = false
 
 [node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
@@ -54,13 +93,40 @@ autowrap_mode = 2
 width = 300.0
 script = ExtResource("6_bqmiy")
 
+[node name="SM_Robot2" parent="GiftType3" instance=ExtResource("14_qp6o8")]
+visible = false
+
+[node name="Book Stack" parent="GiftType3" instance=ExtResource("15_vgntl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+visible = false
+
+[node name="SM_CreaturePlush" parent="GiftType3" instance=ExtResource("16_w7n86")]
+visible = false
+
+[node name="SM_Pogo2" parent="GiftType3" instance=ExtResource("17_tik8e")]
+visible = false
+
 [node name="Coal" parent="." instance=ExtResource("5_pe3km")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, 0)
 visible = false
+
+[node name="DM_Tag" parent="Coal" instance=ExtResource("19_1f2oo")]
+transform = Transform3D(0.290629, 0.136714, 0.947018, -0.74412, -0.589905, 0.313523, 0.601514, -0.795815, -0.0697117, -0.0598833, 0.287601, 0.225459)
+
+[node name="Tag" type="Label3D" parent="Coal"]
+transform = Transform3D(6.3831, -1.78781, -0.209081, 1.97431, 4.66276, 1.07165, -0.566458, -3.89446, 1.37905, -0.0629918, 0.299441, 0.223379)
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "test"
+font_size = 20
+outline_size = 0
+autowrap_mode = 2
+width = 300.0
+script = ExtResource("20_ylk8p")
 
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]
 [connection signal="inspection_exited" from="." to="." method="_on_inspection_exited"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="need_repair" from="GiftType1/Tag" to="." method="_on_tag_need_repair"]
-[connection signal="need_repair" from="GiftType2/Tag2" to="." method="_on_tag_need_repair"]
+[connection signal="need_repair" from="GiftType2/Tag" to="." method="_on_tag_need_repair"]
 [connection signal="need_repair" from="GiftType3/Tag" to="." method="_on_tag_need_repair"]

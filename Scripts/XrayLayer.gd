@@ -1,6 +1,5 @@
 extends ColorRect
 
-var xrayOn: bool = false
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -8,9 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_player_x_ray():
-	if xrayOn:
+	if GlobalVariables.xrayOn:
 		hide()
-		xrayOn = false
 	else:
 		show()
-		xrayOn = true

@@ -2,6 +2,7 @@ extends Node3D
 
 signal inspection_entered
 signal inspection_exited
+signal present_content
 
 @export var move_speed: float = 0.1
 @export var is_nice: bool = true
@@ -15,6 +16,7 @@ var action_taken: actions
 var is_getting_inspected: bool = false
 var is_inspected: bool = false
 var gift_box: Node3D
+
 
 
 @onready var gift_boxes:= [$GiftType1, $GiftType2, $GiftType3]
@@ -31,6 +33,7 @@ func _ready():
 	# Randomise physical properties
 	gift_box = randomise_gift_shape()
 	randomise_present_colours(gift_box)
+	randomise_gift_content(gift_box)
 
 
 func _process(_delta):
@@ -54,6 +57,7 @@ func initialise(spawn_pos: Vector3 , obj):
 	obj.present_accepted.connect(_on_player_present_accepted)
 	obj.present_rejected.connect(_on_player_present_rejected)
 	obj.present_recycled.connect(_on_player_present_recycled)
+	obj.XRay.connect(_on_player_x_ray)
 	
 	is_nice = true if GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex] == "Nice" else false
 	correct_action = actions.ACCEPT if is_nice else actions.REJECT
@@ -68,7 +72,14 @@ func randomise_gift_shape() -> Node3D:
 	gift_boxes[gift_type_idx].show()
 	
 	return gift_boxes[gift_type_idx]
-
+	
+func randomise_gift_content(boxType) -> Node3D:
+	var content_type_content = randi_range(2, boxType.get_child_count()-1)
+	boxType.get_child(content_type_content).show()
+	
+	present_content.emit()
+	
+	return get_child(content_type_content)
 
 func randomise_present_colours(present) -> void:
 	var ribbon_material = StandardMaterial3D.new()
@@ -82,7 +93,6 @@ func randomise_present_colours(present) -> void:
 	
 	present.get_child(0).mesh.surface_set_material(0, ribbon_material)
 	present.get_child(0).mesh.surface_set_material(1, box_material)
-	print_debug("Randomised the colour")
 
 
 func compare_actions(correct, taken):
@@ -142,3 +152,22 @@ func _on_player_present_recycled():
 
 func _on_tag_need_repair():
 	correct_action = actions.RECYCLE
+
+
+func _on_player_x_ray():
+	var ribbon_material_trans = StandardMaterial3D.new()
+	var box_material_trans = StandardMaterial3D.new()
+	
+	if GlobalVariables.xrayOn:
+		ribbon_material_trans.transparency = 0
+		box_material_trans.transparency = 0
+		ribbon_material_trans.albedo_color = Color(gift_box.get_child(0).mesh.surface_get_material(0).albedo_color, 1)
+		box_material_trans.albedo_color = Color(gift_box.get_child(0).mesh.surface_get_material(1).albedo_color, 1)
+	else:
+		ribbon_material_trans.transparency = 1
+		box_material_trans.transparency = 1
+		ribbon_material_trans.albedo_color = Color(gift_box.get_child(0).mesh.surface_get_material(0).albedo_color, 0.3)
+		box_material_trans.albedo_color = Color(gift_box.get_child(0).mesh.surface_get_material(1).albedo_color, 0.3)
+		
+	gift_box.get_child(0).mesh.surface_set_material(0, ribbon_material_trans)
+	gift_box.get_child(0).mesh.surface_set_material(1, box_material_trans)

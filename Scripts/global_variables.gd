@@ -14,7 +14,8 @@ extends Node
 @export var naughtyNice := []
 @export var address := []
 @export var addressMisspelled := []
-@export var wishList :=[]
+@export var wishList := ["Building blocks","Puzzle","Toy car","Playdough","Jump rope","Storybook","Finger paints","Board game","Doll","Kids gardening kit","Superhero cape"]
 
+@export var xrayOn: bool = false
 @export var presentDataIndex = 0
 @export var fire: bool = false
