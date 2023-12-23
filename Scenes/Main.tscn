@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=26 format=3 uid="uid://rrl6e6temvop"]
 
-[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
+[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
@@ -11,16 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
 [ext_resource type="Script" path="res://Scripts/RightPageBook.gd" id="9_1abov"]
-[ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
+[ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 [ext_resource type="Script" path="res://Scripts/name_printout.gd" id="11_7huuh"]
 [ext_resource type="PackedScene" uid="uid://clhcl6527p4j1" path="res://Scenes/VFX/vfx_snow.tscn" id="11_ieh2n"]
 [ext_resource type="Script" path="res://Scripts/fire_on_off.gd" id="14_cb1d0"]
 [ext_resource type="PackedScene" uid="uid://ccjb6g47y7th8" path="res://Models/SM_FirePlace.glb" id="18_v7wqu"]
-[ext_resource type="PackedScene" path="res://Scenes/SM_Room.tscn" id="19_bd1ry"]
-[ext_resource type="PackedScene" uid="uid://bkjcylk7wegye" path="res://Scenes/sm_christmas_tree_2.tscn" id="21_2vvk5"]
-[ext_resource type="PackedScene" path="res://Scenes/sm_wreath.tscn" id="21_toxqy"]
+[ext_resource type="PackedScene" path="res://Scenes/sm_christmas_tree_2.tscn" id="21_2vvk5"]
+[ext_resource type="PackedScene" uid="uid://bf6c5q2m63iuq" path="res://Scenes/sm_wreath.tscn" id="21_toxqy"]
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="22_8tp7i"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="23_tws81"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="24_jrmwq"]
@@ -110,7 +109,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
 
 [node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
-transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.19992, 0, 2.683)
+transform = Transform3D(0.153744, 0, 0.988111, 0, 1, 0, -0.988111, 0, 0.153744, 1.29748, 0, 2.95852)
 
 [node name="Label3D" type="Label3D" parent="SM_BookPedestal2"]
 transform = Transform3D(-18.8376, 0.0668514, 0.000115164, 0.0877074, 16.8125, 0.0177372, -0.0210567, 10.2346, -0.029138, 0.210428, 1.64837, -0.0427386)
@@ -135,7 +134,7 @@ width = 200.0
 script = ExtResource("9_1abov")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3995, 0.0255811, 2.68302)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.918046, 0.0255811, 2.08993)
 
 [node name="Label3D" type="Label3D" parent="SM_ChildList"]
 transform = Transform3D(-4.08218, -1.6001e-07, -1.31134e-07, -5.35313e-07, -1.6001e-07, 1, -1.78438e-07, 3.6606, 4.37114e-08, 0, 0.921608, -0.389209)
@@ -148,7 +147,7 @@ width = 600.0
 script = ExtResource("11_7huuh")
 
 [node name="ControlPanel" parent="." instance=ExtResource("7_k4e4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105105, 1.86655)
+transform = Transform3D(0.71629, 0, -0.697803, 0, 1, 0, 0.697803, 0, 0.71629, 0.904795, -0.105105, 1.95579)
 
 [node name="DM_FlameThrower2" parent="." instance=ExtResource("9_cc0at")]
 transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, 3.62104, 0.242134)
@@ -160,7 +159,7 @@ script = ExtResource("14_cb1d0")
 [node name="VFX_Snow" parent="." instance=ExtResource("11_ieh2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)
 
-[node name="SM_Room" parent="." instance=ExtResource("19_bd1ry")]
+[node name="SM_Room" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Decorations" type="Node" parent="."]
