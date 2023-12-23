@@ -60,7 +60,6 @@ visible = false
 
 [node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
-visible = false
 
 [node name="Tag" type="Label3D" parent="GiftType2"]
 transform = Transform3D(2.89123, 1.72837, -1.5127, 5.92184, 0.42778, 0.816539, 1.23908, -6.07735, -0.372727, -0.560574, 0.858428, -0.177167)
