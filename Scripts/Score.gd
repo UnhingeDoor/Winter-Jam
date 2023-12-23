@@ -1,6 +1,6 @@
 extends Label
 
-@onready var score_label: Label = $Score
+@onready var score_label: Label = self
 @onready var mistakes_label: Label = get_node("../Mistakes")
 
 
