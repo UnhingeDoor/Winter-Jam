@@ -56,6 +56,9 @@ func _process(_delta):
 		present.initialise(present_spawn_pos, player)
 		instantiate_object(present)
 		GlobalVariables.present_on_screen_count += 1
+	
+	if GlobalVariables.mistakes >= 3:
+		get_tree().reload_current_scene()
 
 
 func instantiate_object(present):
