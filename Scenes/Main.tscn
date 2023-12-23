@@ -212,6 +212,8 @@ transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -9.314
 [node name="VentOut" parent="Decorations" instance=ExtResource("25_lmsrd")]
 transform = Transform3D(2, 0, 6.03983e-07, 0, 2, 0, -6.03983e-07, 0, 2, 9.314, 0.057, -0.047)
 
+[node name="Present" parent="." instance=ExtResource("1_mb113")]
+
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="XRay" from="Player" to="UserInterface/CanvasLayer/ColorRect" method="_on_player_x_ray"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
