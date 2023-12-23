@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://s5h3xm6ekp32"]
+
+[ext_resource type="PackedScene" uid="uid://1bcmfwdx82x5" path="res://Models/SM_Vent.glb" id="1_5nb5t"]
+
+[node name="SM_Vent" instance=ExtResource("1_5nb5t")]

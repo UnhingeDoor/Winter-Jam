@@ -5,6 +5,7 @@ extends Node
 @export var lock_button: bool = false
 
 @export var score: int = 0
+@export var mistakes: int = 0
 
 #database information
 @export var firstNames := []

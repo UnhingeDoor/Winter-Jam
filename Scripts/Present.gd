@@ -92,7 +92,7 @@ func compare_actions(correct, taken):
 		GlobalVariables.score += 1
 	else:
 		# emit incorrect action
-		pass
+		GlobalVariables.mistakes += 1
 
 
 func burn_present(present):

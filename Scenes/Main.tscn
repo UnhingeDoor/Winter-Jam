@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=28 format=3 uid="uid://rrl6e6temvop"]
 
-[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
+[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
+[ext_resource type="Script" path="res://Scenes/light_controller.gd" id="8_afc2a"]
 [ext_resource type="Script" path="res://Scripts/RightPageBook.gd" id="9_1abov"]
 [ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
@@ -20,10 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://ccjb6g47y7th8" path="res://Models/SM_FirePlace.glb" id="18_v7wqu"]
 [ext_resource type="PackedScene" path="res://Scenes/SM_Room.tscn" id="19_bd1ry"]
 [ext_resource type="PackedScene" uid="uid://bkjcylk7wegye" path="res://Scenes/sm_christmas_tree_2.tscn" id="21_2vvk5"]
-[ext_resource type="PackedScene" uid="uid://bf6c5q2m63iuq" path="res://Scenes/sm_wreath.tscn" id="21_toxqy"]
+[ext_resource type="PackedScene" path="res://Scenes/sm_wreath.tscn" id="21_toxqy"]
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="22_8tp7i"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="23_tws81"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="24_jrmwq"]
+[ext_resource type="PackedScene" uid="uid://s5h3xm6ekp32" path="res://Scenes/sm_vent.tscn" id="25_lmsrd"]
 
 [sub_resource type="GDScript" id="GDScript_ud5np"]
 script/source = "extends Node
@@ -65,6 +67,7 @@ func reset_global_variables():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count = 1
 	GlobalVariables.score = 0
+	GlobalVariables.lights_flashing = false
 
 
 func _on_level_timer_timeout():
@@ -102,9 +105,11 @@ transform = Transform3D(-1, 0, -7.99894e-08, 0, 1, 0, 8.74228e-08, 0, -0.914972,
 
 [node name="SM_Room2" parent="." instance=ExtResource("6_qd2yy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
+script = ExtResource("8_afc2a")
 
 [node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
 transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.19992, 0, 2.683)
@@ -155,50 +160,58 @@ script = ExtResource("14_cb1d0")
 [node name="VFX_Snow" parent="." instance=ExtResource("11_ieh2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.65605, 0)
 
-[node name="SM_FirePlace" parent="." instance=ExtResource("18_v7wqu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
 [node name="SM_Room" parent="." instance=ExtResource("19_bd1ry")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="SM_ChristmasTree2" parent="." instance=ExtResource("21_2vvk5")]
-transform = Transform3D(-0.608357, 0, -1.09197, 0, 1.25, 0, 1.09197, 0, -0.608357, 7.017, 0, -7.06185)
+[node name="Decorations" type="Node" parent="."]
 
-[node name="SM_Wreath" parent="." instance=ExtResource("21_toxqy")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="SM_GiftBox_012" parent="." instance=ExtResource("22_8tp7i")]
+[node name="SM_GiftBox_012" parent="Decorations" instance=ExtResource("22_8tp7i")]
 transform = Transform3D(-0.856159, 0, 0.516713, 0, 1, 0, -0.516713, 0, -0.856159, 5.927, 0, -6.43596)
 
-[node name="SM_GiftBox_022" parent="." instance=ExtResource("23_tws81")]
+[node name="SM_GiftBox_022" parent="Decorations" instance=ExtResource("23_tws81")]
 transform = Transform3D(0.468454, 0, 0.883488, 0, 1, 0, -0.883488, 0, 0.468454, 7.53432, 0, -5.1457)
 
-[node name="SM_GiftBox_032" parent="." instance=ExtResource("24_jrmwq")]
+[node name="SM_GiftBox_032" parent="Decorations" instance=ExtResource("24_jrmwq")]
 transform = Transform3D(0.359231, 0, 0.933249, 0, 1, 0, -0.933249, 0, 0.359231, 5.99693, 0, -8.98191)
 
-[node name="SM_GiftBox_012" parent="SM_GiftBox_032" instance=ExtResource("22_8tp7i")]
+[node name="SM_GiftBox_012" parent="Decorations/SM_GiftBox_032" instance=ExtResource("22_8tp7i")]
 transform = Transform3D(-0.599311, 0, 0.361699, 0, 0.7, 0, -0.361699, 0, -0.599311, -5.5144, 1.00434, -11.4261)
 
-[node name="SM_GiftBox_022" parent="SM_GiftBox_032" instance=ExtResource("23_tws81")]
+[node name="SM_GiftBox_022" parent="Decorations/SM_GiftBox_032" instance=ExtResource("23_tws81")]
 transform = Transform3D(0.468455, 0, 0.883488, 0, 1, 0, -0.883488, 0, 0.468455, -4.99971, 0, -11.2467)
 
-[node name="SM_GiftBox_032" parent="SM_GiftBox_032" instance=ExtResource("24_jrmwq")]
+[node name="SM_GiftBox_032" parent="Decorations/SM_GiftBox_032" instance=ExtResource("24_jrmwq")]
 transform = Transform3D(0.359232, 0, 0.933249, 0, 1, 0, -0.933249, 0, 0.359232, -5.69976, 0, -13.0649)
 
-[node name="SM_GiftBox_023" parent="." instance=ExtResource("23_tws81")]
+[node name="SM_GiftBox_023" parent="Decorations" instance=ExtResource("23_tws81")]
 transform = Transform3D(-0.0704118, 0, 0.746687, 0, 0.75, 0, -0.746687, 0, -0.0704118, -7.96425, 0, -7.21361)
 
-[node name="SM_GiftBox_033" parent="." instance=ExtResource("24_jrmwq")]
+[node name="SM_GiftBox_033" parent="Decorations" instance=ExtResource("24_jrmwq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62637, 0, -6.12255)
 
-[node name="SM_GiftBox_013" parent="." instance=ExtResource("22_8tp7i")]
+[node name="SM_GiftBox_013" parent="Decorations" instance=ExtResource("22_8tp7i")]
 transform = Transform3D(-0.46767, 0, 0.176876, 0, 0.5, 0, -0.176876, 0, -0.46767, 5.89578, 0, -5.39566)
 
-[node name="SM_GiftBox_024" parent="." instance=ExtResource("23_tws81")]
+[node name="SM_GiftBox_024" parent="Decorations" instance=ExtResource("23_tws81")]
 transform = Transform3D(0.202148, 0, 0.457314, 0, 0.5, 0, -0.457314, 0, 0.202148, 5.21509, 0, -7.83634)
 
-[node name="SM_GiftBox_034" parent="." instance=ExtResource("24_jrmwq")]
+[node name="SM_GiftBox_034" parent="Decorations" instance=ExtResource("24_jrmwq")]
 transform = Transform3D(-0.392745, 0, -0.309437, 0, 0.5, 0, 0.309437, 0, -0.392745, -8.42327, 0, -6.40329)
+
+[node name="SM_Wreath" parent="Decorations" instance=ExtResource("21_toxqy")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="SM_ChristmasTree2" parent="Decorations" instance=ExtResource("21_2vvk5")]
+transform = Transform3D(-0.608357, 0, -1.09197, 0, 1.25, 0, 1.09197, 0, -0.608357, 7.017, 0, -7.06185)
+
+[node name="SM_FirePlace" parent="Decorations" instance=ExtResource("18_v7wqu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="VentIn" parent="Decorations" instance=ExtResource("25_lmsrd")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -9.314, 0.057, -0.047)
+
+[node name="VentOut" parent="Decorations" instance=ExtResource("25_lmsrd")]
+transform = Transform3D(2, 0, 6.03983e-07, 0, 2, 0, -6.03983e-07, 0, 2, 9.314, 0.057, -0.047)
 
 [connection signal="present_despawned" from="." to="." method="_on_present_despawned"]
 [connection signal="XRay" from="Player" to="UserInterface/CanvasLayer/ColorRect" method="_on_player_x_ray"]
@@ -207,3 +220,5 @@ transform = Transform3D(-0.392745, 0, -0.309437, 0, 0.5, 0, 0.309437, 0, -0.3927
 [connection signal="present_rejected" from="Player" to="Present" method="_on_player_present_rejected"]
 [connection signal="tree_exited" from="Present" to="." method="_on_present_tree_exited"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+
+[editable path="UserInterface"]
