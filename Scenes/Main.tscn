@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://rrl6e6temvop"]
 
-[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/Present.tscn" id="1_mb113"]
-[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/Player.tscn" id="2_uywyi"]
+[ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
+[ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
 [ext_resource type="PackedScene" uid="uid://s4oqqr201p7v" path="res://Scenes/user_interface.tscn" id="4_nljwa"]
 [ext_resource type="Script" path="res://Scripts/SQLController.gd" id="4_t0cif"]
 [ext_resource type="PackedScene" uid="uid://cu0vb5uk0orc6" path="res://Scenes/conveyor_belt.tscn" id="5_dcnt0"]
@@ -11,16 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
 [ext_resource type="Script" path="res://Scripts/RightPageBook.gd" id="9_1abov"]
-[ext_resource type="PackedScene" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
+[ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
 [ext_resource type="PackedScene" uid="uid://55v3gohp14i3" path="res://Models/SM_ChildList.glb" id="10_fc5pg"]
 [ext_resource type="Script" path="res://Scripts/name_printout.gd" id="11_7huuh"]
 [ext_resource type="PackedScene" uid="uid://clhcl6527p4j1" path="res://Scenes/VFX/vfx_snow.tscn" id="11_ieh2n"]
 [ext_resource type="Script" path="res://Scripts/fire_on_off.gd" id="14_cb1d0"]
 [ext_resource type="PackedScene" uid="uid://ccjb6g47y7th8" path="res://Models/SM_FirePlace.glb" id="18_v7wqu"]
-[ext_resource type="PackedScene" uid="uid://cjvmr5n7cq8o" path="res://Scenes/SM_Room.tscn" id="19_bd1ry"]
-[ext_resource type="PackedScene" path="res://Scenes/sm_christmas_tree_2.tscn" id="21_2vvk5"]
-[ext_resource type="PackedScene" uid="uid://bf6c5q2m63iuq" path="res://Scenes/sm_wreath.tscn" id="21_toxqy"]
+[ext_resource type="PackedScene" path="res://Scenes/SM_Room.tscn" id="19_bd1ry"]
+[ext_resource type="PackedScene" uid="uid://bkjcylk7wegye" path="res://Scenes/sm_christmas_tree_2.tscn" id="21_2vvk5"]
+[ext_resource type="PackedScene" path="res://Scenes/sm_wreath.tscn" id="21_toxqy"]
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="22_8tp7i"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="23_tws81"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="24_jrmwq"]
@@ -56,6 +56,9 @@ func _process(_delta):
 		present.initialise(present_spawn_pos, player)
 		instantiate_object(present)
 		GlobalVariables.present_on_screen_count += 1
+	
+	if GlobalVariables.mistakes >= 3:
+		get_tree().reload_current_scene()
 
 
 func instantiate_object(present):
@@ -66,6 +69,7 @@ func reset_global_variables():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count = 1
 	GlobalVariables.score = 0
+	GlobalVariables.mistakes = 0
 
 
 func _on_level_timer_timeout():
@@ -132,7 +136,7 @@ vertical_alignment = 0
 script = ExtResource("9_1abov")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3995, 0.0203795, 2.68302)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3995, 0, 2.68302)
 
 [node name="Label3D" type="Label3D" parent="SM_ChildList"]
 transform = Transform3D(-4.08218, -1.6001e-07, -1.31134e-07, -5.35313e-07, -1.6001e-07, 1, -1.78438e-07, 3.6606, 4.37114e-08, 0, 0.921608, -0.389209)
