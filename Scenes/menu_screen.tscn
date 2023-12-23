@@ -1,0 +1,241 @@
+[gd_scene load_steps=5 format=3 uid="uid://fm8k0m3o8aep"]
+
+[ext_resource type="Script" path="res://Scripts/StartScreen.gd" id="1_tjakn"]
+[ext_resource type="FontFile" uid="uid://c0esb8klggsy7" path="res://Assets/Sevillana-Regular.ttf" id="2_388a0"]
+
+[sub_resource type="Gradient" id="Gradient_itsse"]
+offsets = PackedFloat32Array(0, 0.154472, 0.257453, 0.403794, 0.569106, 0.712737, 0.818428, 0.921409, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j55l6"]
+gradient = SubResource("Gradient_itsse")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjakn")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.231373, 0.0705882, 1)
+
+[node name="Won" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackToMenu" type="Button" parent="Won"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = 46.0
+offset_right = 125.5
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "BACK TO MENU"
+
+[node name="Label" type="Label" parent="Won"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = -96.0
+offset_right = 250.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Congratulations! Your meticulous attention to detail has saved Christmas!
+
+(Thanks for playing)
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StartMain" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="StartMain"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -29.0
+offset_right = 125.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "START"
+
+[node name="TutorialButton" type="Button" parent="StartMain"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = 46.0
+offset_right = 125.5
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "TUTORIAL"
+
+[node name="TextureRect" type="TextureRect" parent="StartMain"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 189.0
+offset_right = 845.0
+offset_bottom = 193.0
+texture = SubResource("GradientTexture1D_j55l6")
+
+[node name="Label" type="Label" parent="StartMain"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.5
+offset_top = 120.0
+offset_right = 259.5
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_388a0")
+theme_override_font_sizes/font_size = 60
+text = "Present Quality Control"
+
+[node name="StartTutorial" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="Button" parent="StartTutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = 176.0
+offset_right = 125.5
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "BACK"
+
+[node name="Label" type="Label" parent="StartTutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -223.0
+offset_right = 251.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "On the eve of Christmas, it is your duty as the Chief Present Inspection Officer (CPIO) to ensure that only gifts destined for deserving children make it on to Santa's sleigh. It is also essential that the gifts are of impeccable quality.
+
+Cross check the labels on the presents with your list of recipients, and confirm if they have been naughty or nice, and press the red or green buttons on your control panel accordingly. Keep an eye out for any defects or mistakes on the labels. Press the yellow button in this case.
+
+
+Right click to zoom in and out to read the labels.
+Left click on a button to activate it.
+
+Sort all of the presents correctly in time to not ruin Christmas!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Retry" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RetryButton" type="Button" parent="Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = 46.0
+offset_right = 125.5
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "RETRY"
+
+[node name="Label" type="Label" parent="Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = -184.0
+offset_right = 250.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You made too many mistakes.
+
+
+
+
+
+Santa will not be pleased."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Won/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="StartMain/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMain/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="StartTutorial/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Retry/RetryButton" to="." method="_on_retry_button_pressed"]

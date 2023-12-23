@@ -19,3 +19,5 @@ extends Node
 @export var xrayOn: bool = false
 @export var presentDataIndex = 0
 @export var fire: bool = false
+
+@export var menu_state: String = "START"
