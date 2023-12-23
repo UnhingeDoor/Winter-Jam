@@ -65,7 +65,6 @@ visible = false
 
 [node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
-visible = false
 
 [node name="Tag" type="Label3D" parent="GiftType2"]
 transform = Transform3D(2.89123, 1.72837, -1.5127, 5.92184, 0.42778, 0.816539, 1.23908, -6.07735, -0.372727, -0.560574, 0.858428, -0.177167)
@@ -83,7 +82,7 @@ transform = Transform3D(0.92394, -0.354906, 0.14275, 0.382538, 0.857198, -0.3447
 visible = false
 
 [node name="SM_Trainset" parent="GiftType2" instance=ExtResource("12_qkr0c")]
-transform = Transform3D(-0.95, 0, -8.30516e-08, 0, 0.95, 0, 8.30516e-08, 0, -0.95, -0.0789533, 0.19735, -3.45116e-09)
+transform = Transform3D(-0.95, 0, -8.30516e-08, 0, 0.95, 0, 8.30516e-08, 0, -0.95, 0.0377368, 0.19735, 1.64953e-09)
 
 [node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
