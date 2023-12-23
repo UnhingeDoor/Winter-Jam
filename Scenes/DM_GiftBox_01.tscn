@@ -5,14 +5,15 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jduhy"]
 resource_name = "Mat_Ribbon"
+transparency = 1
 cull_mode = 2
 albedo_color = Color(1, 0.843137, 0, 1)
 roughness = 0.634921
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esdhq"]
 resource_name = "Mat_Box"
-cull_mode = 2
-albedo_color = Color(0.906332, 0, 0.126039, 1)
+transparency = 1
+albedo_color = Color(0.905882, 0, 0.12549, 0.478431)
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aldq5"]
