@@ -55,7 +55,7 @@ func initialise(spawn_pos: Vector3 , obj):
 	obj.present_rejected.connect(_on_player_present_rejected)
 	obj.present_recycled.connect(_on_player_present_recycled)
 	
-	is_nice = randi_range(0, 1) # false, true
+	is_nice = true if GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex] == "Nice" else false
 	correct_action = actions.ACCEPT if is_nice else actions.REJECT
 	position = spawn_pos
 
