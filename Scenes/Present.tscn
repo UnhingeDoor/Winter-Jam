@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://db6mx0coa2uu0" path="res://Scenes/DM_GiftBox_01.tscn" id="2_i7kwm"]
 [ext_resource type="PackedScene" uid="uid://cwutyikk8d7px" path="res://Scenes/DM_GiftBox_02.tscn" id="3_1t3jy"]
 [ext_resource type="PackedScene" uid="uid://b635rk1uj5nd3" path="res://Scenes/DM_GiftBox_03.tscn" id="4_vqfwf"]
-[ext_resource type="PackedScene" uid="uid://4cdxyajgvv8w" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
+[ext_resource type="PackedScene" path="res://Scenes/DM_Coal.tscn" id="5_pe3km"]
 [ext_resource type="Script" path="res://Scripts/present_tag.gd" id="6_bqmiy"]
 
 [node name="Present" type="Node3D"]
@@ -27,23 +27,25 @@ script = ExtResource("6_bqmiy")
 
 [node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
-visible = false
 
 [node name="Tag" type="Label3D" parent="GiftType2"]
+transform = Transform3D(2.68929, 1.5134, -0.2569, 5.68156, 0.942908, 0.129668, 1.27329, -7.4038, -0.035999, -0.554986, 0.858367, -0.174607)
 pixel_size = 0.0001
 modulate = Color(0, 0, 0, 1)
 text = "test"
 font_size = 20
 outline_size = 0
 autowrap_mode = 2
-width = 300.0
+width = 350.0
 script = ExtResource("6_bqmiy")
 
 [node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
+visible = false
 
 [node name="Tag" type="Label3D" parent="GiftType3"]
 transform = Transform3D(-1.17959, 6.08134, 0.380903, 5.93398, 0.366769, 0.812757, 2.89123, 1.72837, -1.5127, 0.172818, 1.82043, -0.560715)
+visible = false
 pixel_size = 0.0001
 modulate = Color(0, 0, 0, 1)
 text = "test"
