@@ -73,13 +73,15 @@ func randomise_gift_shape() -> Node3D:
 	
 	return gift_boxes[gift_type_idx]
 	
+	
 func randomise_gift_content(boxType) -> Node3D:
 	var content_type_content = randi_range(2, boxType.get_child_count()-1)
 	boxType.get_child(content_type_content).show()
 	
-	present_content.emit()
+	GlobalVariables.currentPresent = boxType.get_child(content_type_content).name
 	
-	return get_child(content_type_content)
+	return boxType.get_child(content_type_content)
+
 
 func randomise_present_colours(present) -> void:
 	var ribbon_material = StandardMaterial3D.new()
