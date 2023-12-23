@@ -40,5 +40,5 @@ func _process(_delta):
 		text = text+"%s has been " % GlobalVariables.firstNames[GlobalVariables.presentDataIndex]
 		text = text+"%s\n\n" % GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex]
 	
-	
+	text = ""
 	pass
