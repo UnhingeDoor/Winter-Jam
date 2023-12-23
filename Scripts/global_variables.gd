@@ -18,3 +18,5 @@ extends Node
 
 @export var presentDataIndex = 0
 @export var fire: bool = false
+
+@export var menu_state: String = "START"
