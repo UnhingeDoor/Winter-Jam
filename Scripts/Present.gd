@@ -91,7 +91,6 @@ func compare_actions(correct, taken):
 	if correct == taken:
 		GlobalVariables.score += 1
 	else:
-		# emit incorrect action
 		GlobalVariables.mistakes += 1
 
 

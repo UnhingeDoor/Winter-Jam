@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://rrl6e6temvop"]
+[gd_scene load_steps=27 format=3 uid="uid://rrl6e6temvop"]
 
 [ext_resource type="PackedScene" uid="uid://cuxdvqwiaaatv" path="res://Scenes/present.tscn" id="1_mb113"]
 [ext_resource type="PackedScene" uid="uid://1x65lccosvku" path="res://Scenes/player.tscn" id="2_uywyi"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://kxq685aqa3qj" path="res://Models/SM_BookPedestal.glb" id="7_h3ek2"]
 [ext_resource type="PackedScene" uid="uid://boqydor625xbu" path="res://Scenes/control_panel.tscn" id="7_k4e4r"]
 [ext_resource type="Script" path="res://Scripts/LeftPageBook.gd" id="8_5mffi"]
-[ext_resource type="Script" path="res://Scenes/light_controller.gd" id="8_afc2a"]
 [ext_resource type="Script" path="res://Scripts/RightPageBook.gd" id="9_1abov"]
 [ext_resource type="PackedScene" uid="uid://cfso5uhj2sfv3" path="res://Scenes/incinerator.tscn" id="9_cc0at"]
 [ext_resource type="PackedScene" uid="uid://bdai8ordmxq2l" path="res://Scenes/VFX/fire_effect.tscn" id="10_f6eys"]
@@ -67,7 +66,6 @@ func reset_global_variables():
 	GlobalVariables.inspection_in_progress = false
 	GlobalVariables.present_on_screen_count = 1
 	GlobalVariables.score = 0
-	GlobalVariables.lights_flashing = false
 
 
 func _on_level_timer_timeout():
@@ -109,7 +107,6 @@ visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.302486, 0.953154, 0, -0.953154, 0.302486, 0, 0, 0)
-script = ExtResource("8_afc2a")
 
 [node name="SM_BookPedestal2" parent="." instance=ExtResource("7_h3ek2")]
 transform = Transform3D(-0.318479, 0, -0.94793, 0, 1, 0, 0.94793, 0, -0.318479, -1.19992, 0, 2.683)
