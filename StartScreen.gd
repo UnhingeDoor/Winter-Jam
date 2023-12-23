@@ -1,7 +1,7 @@
 extends Control
 
 @onready var tree = get_tree()
-@onready var main_scene: PackedScene = preload("res://Scenes/main.tscn")
+@onready var main_scene: PackedScene = preload("res://Scenes/Main.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$StartMain.show()
