@@ -58,8 +58,6 @@ func initialise(spawn_pos: Vector3 , obj):
 	is_nice = randi_range(0, 1) # false, true
 	correct_action = actions.ACCEPT if is_nice else actions.REJECT
 	position = spawn_pos
-	
-	GlobalVariables.presentDataIndex += 1
 
 
 func randomise_gift_shape() -> Node3D:
@@ -92,6 +90,8 @@ func compare_actions(correct, taken):
 		GlobalVariables.score += 1
 	else:
 		GlobalVariables.mistakes += 1
+		
+	GlobalVariables.presentDataIndex += 1
 
 
 func burn_present(present):
