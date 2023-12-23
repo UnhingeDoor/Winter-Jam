@@ -28,15 +28,15 @@ script = ExtResource("6_bqmiy")
 [node name="GiftType2" parent="." instance=ExtResource("3_1t3jy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.5, 0)
 
-[node name="Tag" type="Label3D" parent="GiftType2"]
-transform = Transform3D(2.68929, 1.5134, -0.2569, 5.68156, 0.942908, 0.129668, 1.27329, -7.4038, -0.035999, -0.554986, 0.858367, -0.174607)
+[node name="Tag2" type="Label3D" parent="GiftType2"]
+transform = Transform3D(2.89123, 1.72837, -1.5127, 5.92184, 0.42778, 0.816539, 1.23908, -6.07735, -0.372727, -0.560574, 0.858428, -0.177167)
 pixel_size = 0.0001
 modulate = Color(0, 0, 0, 1)
 text = "test"
 font_size = 20
 outline_size = 0
 autowrap_mode = 2
-width = 350.0
+width = 300.0
 script = ExtResource("6_bqmiy")
 
 [node name="GiftType3" parent="." instance=ExtResource("4_vqfwf")]
@@ -45,7 +45,6 @@ visible = false
 
 [node name="Tag" type="Label3D" parent="GiftType3"]
 transform = Transform3D(-1.17959, 6.08134, 0.380903, 5.93398, 0.366769, 0.812757, 2.89123, 1.72837, -1.5127, 0.172818, 1.82043, -0.560715)
-visible = false
 pixel_size = 0.0001
 modulate = Color(0, 0, 0, 1)
 text = "test"
@@ -62,3 +61,6 @@ visible = false
 [connection signal="inspection_entered" from="." to="." method="_on_inspection_entered"]
 [connection signal="inspection_exited" from="." to="." method="_on_inspection_exited"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="need_repair" from="GiftType1/Tag" to="." method="_on_tag_need_repair"]
+[connection signal="need_repair" from="GiftType2/Tag2" to="." method="_on_tag_need_repair"]
+[connection signal="need_repair" from="GiftType3/Tag" to="." method="_on_tag_need_repair"]

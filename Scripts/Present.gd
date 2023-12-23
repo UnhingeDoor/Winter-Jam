@@ -139,3 +139,6 @@ func _on_player_present_recycled():
 		compare_actions(correct_action, action_taken)
 		finish_inspection()
 
+
+func _on_tag_need_repair():
+	correct_action = actions.RECYCLE
