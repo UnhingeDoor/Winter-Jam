@@ -62,6 +62,8 @@ func initialise(spawn_pos: Vector3 , obj):
 	is_nice = true if GlobalVariables.naughtyNice[GlobalVariables.presentDataIndex] == "Nice" else false
 	correct_action = actions.ACCEPT if is_nice else actions.REJECT
 	position = spawn_pos
+	
+	
 
 
 func randomise_gift_shape() -> Node3D:
@@ -104,7 +106,7 @@ func compare_actions(correct, taken):
 		GlobalVariables.mistakes += 1
 		
 	GlobalVariables.presentDataIndex += 1
-
+	GlobalVariables.updateBook = true
 
 func burn_present(present):
 	GlobalVariables.fire = true
@@ -173,3 +175,7 @@ func _on_player_x_ray():
 		
 	gift_box.get_child(0).mesh.surface_set_material(0, ribbon_material_trans)
 	gift_box.get_child(0).mesh.surface_set_material(1, box_material_trans)
+
+
+func _on_label_3d_2_present_off_wishlist():
+	correct_action = actions.RECYCLE

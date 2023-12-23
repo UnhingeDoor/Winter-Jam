@@ -130,6 +130,8 @@ text = "jimmy"
 font_size = 15
 outline_size = 2
 vertical_alignment = 0
+autowrap_mode = 2
+width = 200.0
 script = ExtResource("9_1abov")
 
 [node name="SM_ChildList" parent="." instance=ExtResource("10_fc5pg")]
